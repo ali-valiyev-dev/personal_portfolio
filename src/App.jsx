@@ -1,5 +1,15 @@
+import { Navbar } from "./components";
+
 function App() {
-  return <h1 className="">Hello world!</h1>;
+  return (
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main></main>
+      <footer></footer>
+    </>
+  );
 }
 
 export default App;
