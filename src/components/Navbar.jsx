@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="max-w-screen-2xl flex items-center justify-between px-4 lg:px-28 my-4">
+      <div className="mx-auto max-w-screen-2xl flex items-center justify-between px-4 lg:px-28 my-4">
         {/* logo */}
         <div>
           <Logo />
