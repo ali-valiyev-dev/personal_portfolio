@@ -5,10 +5,10 @@ import Logo from "./Logo";
 
 const navLinks = [
   { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#certifications", label: "Certifications" },
-  { href: "#about", label: "About Me" },
   { href: "#projects", label: "Projects" },
+  { href: "#about", label: "About Me" },
+  { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
 ];
 
 const Navbar = () => {
@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="mx-auto max-w-screen-2xl flex items-center justify-between px-4 lg:px-28 my-4">
+      <div className="mx-auto max-w-screen-2xl flex items-center justify-between px-4 md:px-14 xl:px-28 py-4">
         {/* logo */}
         <div>
           <Logo />
@@ -65,7 +65,7 @@ const Navbar = () => {
             className={`bg-primary-white absolute inset-0 w-full overflow-hidden transition-max-height duration-500 ease-in-out z-50 ${
               isOpen ? "max-h-screen border-b border-primary-black" : "max-h-0"
             }`}>
-            <div className="flex justify-between my-4 px-4">
+            <div className="flex justify-between my-4 px-4 md:px-14">
               <div className="flex items-center">
                 <Logo />
               </div>
@@ -78,7 +78,7 @@ const Navbar = () => {
               </button>
             </div>
 
-            <ul className="flex flex-col items-center justify-center my-10 text-xl font-normal text-primary-black">
+            <ul className="flex flex-col items-center justify-center my-10 text-xl text-primary-black">
               {navLinks.map(link => (
                 <li
                   key={link.href}

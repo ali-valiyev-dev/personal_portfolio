@@ -23,7 +23,38 @@ export default {
       fontFamily: {
         sora: ["Sora", "sans-serif"],
       },
+      textShadow: {
+        outline:
+          "1.5px 1.5px 0 #000, -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000",
+      },
+      dropShadow: {
+        heading: "0px 3px 1px rgba(0, 0, 0, 0.25)",
+      },
+      letterSpacing: {
+        "negative-2": "-0.5px",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities, theme, e }) {
+      const textShadows = theme("textShadow");
+      const textShadowUtilities = Object.keys(textShadows).map(key => {
+        return {
+          [`.${e(`text-shadow-${key}`)}`]: {
+            textShadow: textShadows[key],
+          },
+        };
+      });
+
+      addUtilities(textShadowUtilities, ["responsive", "hover"]);
+    },
+
+    function ({ addBase, theme }) {
+      addBase({
+        body: {
+          "letter-spacing": theme("letterSpacing.negative-2"),
+        },
+      });
+    },
+  ],
 };
