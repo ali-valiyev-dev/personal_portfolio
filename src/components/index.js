@@ -9,6 +9,7 @@ import Experience from "./Experience";
 import ExperienceItem from "./ExperienceItem";
 import Heading from "./Heading";
 import About from "./About";
+import Projects from "./Projects";
 
 export {
   Navbar,
@@ -22,4 +23,5 @@ export {
   ExperienceItem,
   Heading,
   About,
+  Projects,
 };

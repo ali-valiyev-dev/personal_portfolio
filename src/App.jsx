@@ -1,4 +1,11 @@
-import { About, Experience, Hero, Navbar, Skills } from "./components";
+import {
+  About,
+  Experience,
+  Hero,
+  Navbar,
+  Projects,
+  Skills,
+} from "./components";
 
 function App() {
   return (
@@ -13,6 +20,9 @@ function App() {
           <Experience />
         </div>
         <About />
+        <div className="bg-primary-black">
+          <Projects />
+        </div>
       </main>
       <footer></footer>
     </>
