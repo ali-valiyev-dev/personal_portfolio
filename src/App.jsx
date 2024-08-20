@@ -1,4 +1,4 @@
-import { Hero, Navbar } from "./components";
+import { Hero, Navbar, Skills } from "./components";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       </header>
       <main>
         <Hero />
+        <Skills />
       </main>
       <footer></footer>
     </>
