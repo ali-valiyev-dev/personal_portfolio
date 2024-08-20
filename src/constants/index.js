@@ -48,3 +48,44 @@ export const skills = [
     alt: "Figma",
   },
 ];
+
+export const experiences = [
+  {
+    companyLogo: "/atl-logo-light.svg",
+    companyName: "Atl Tech",
+    position: "Intern Software Engineer at Atl Tech",
+    workPeriod: "Feb 2024 - May 2024",
+    description:
+      "As an Intern Software Engineer at Atl, I have contributed to developing scalable web applications while collaborating with senior engineers. My role involves writing clean, efficient code, debugging issues, and learning industry best practices to support ongoing projects ",
+    techStack: [
+      {
+        icon: "mdi:vuejs",
+        name: "Vue",
+      },
+      {
+        icon: "simple-icons:typescript",
+        name: "TypeScript",
+      },
+      {
+        icon: "cib:vue-js",
+        name: "Vue-Query",
+      },
+      {
+        icon: "simple-icons:tailwindcss",
+        name: "TailwindCSS",
+      },
+      {
+        icon: "simple-icons:vuetify",
+        name: "Vuetify",
+      },
+      {
+        icon: "simple-icons:bem",
+        name: "BEM",
+      },
+      {
+        icon: "simple-icons:jira",
+        name: "Jira",
+      },
+    ],
+  },
+];

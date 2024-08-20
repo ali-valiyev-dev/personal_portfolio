@@ -5,5 +5,19 @@ import SocialIcon from "./SocialIcon";
 import SectionTitle from "./SectionTitle";
 import Skills from "./Skills";
 import SkillItem from "./SkillItem";
+import Experience from "./Experience";
+import ExperienceItem from "./ExperienceItem";
+import Heading from "./Heading";
 
-export { Navbar, Logo, Hero, SocialIcon, Skills, SkillItem, SectionTitle };
+export {
+  Navbar,
+  Logo,
+  Hero,
+  SocialIcon,
+  Skills,
+  SkillItem,
+  SectionTitle,
+  Experience,
+  ExperienceItem,
+  Heading,
+};

@@ -1,4 +1,4 @@
-import { Hero, Navbar, Skills } from "./components";
+import { Experience, Hero, Navbar, Skills } from "./components";
 
 function App() {
   return (
@@ -9,6 +9,9 @@ function App() {
       <main>
         <Hero />
         <Skills />
+        <div className="bg-primary-black">
+          <Experience />
+        </div>
       </main>
       <footer></footer>
     </>
