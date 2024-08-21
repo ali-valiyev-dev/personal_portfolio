@@ -4,7 +4,9 @@ import { experiences } from "../constants";
 
 const Experience = () => {
   return (
-    <section id="experience">
+    <section
+      id="experience"
+      className="bg-primary-black">
       <div className="text-primary-white mx-auto max-w-screen-2xl px-4 md:px-14 xl:px-28 py-10 xl:py-20 flex flex-col gap-12 items-center">
         <SectionTitle title="My Experience" />
 

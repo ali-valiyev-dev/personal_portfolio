@@ -1,6 +1,7 @@
 import {
   About,
   Experience,
+  Contacts,
   Hero,
   Navbar,
   Projects,
@@ -16,15 +17,11 @@ function App() {
       <main>
         <Hero />
         <Skills />
-        <div className="bg-primary-black">
-          <Experience />
-        </div>
+        <Experience />
         <About />
-        <div className="bg-primary-black">
-          <Projects />
-        </div>
+        <Projects />
+        <Contacts />
       </main>
-      <footer></footer>
     </>
   );
 }

@@ -89,6 +89,7 @@ export const experiences = [
     ],
   },
 ];
+
 export const projects = [
   {
     id: 1,
@@ -153,5 +154,18 @@ export const projects = [
         name: "Jira",
       },
     ],
+  },
+];
+
+export const socialLinks = [
+  {
+    href: "#",
+    icon: "mdi:linkedin",
+    alt: "Linkedin",
+  },
+  {
+    href: "#",
+    icon: "simple-icons:github",
+    alt: "Github",
   },
 ];
