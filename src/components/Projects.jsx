@@ -10,15 +10,24 @@ const Projects = () => {
       <div className="flex flex-col gap-10">
         <SectionTitle title="My Projects" />
 
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-7 xl:gap-14">
           {projects.map(
-            ({ id, image, title, description, repoLink, previewLink }) => (
+            ({
+              id,
+              image,
+              title,
+              description,
+              repoLink,
+              previewLink,
+              tech,
+            }) => (
               <ProjectItem
                 key={id}
                 id={id}
                 image={image}
                 title={title}
                 description={description}
+                tech={tech}
                 repoLink={repoLink}
                 previewLink={previewLink}
               />
