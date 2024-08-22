@@ -169,3 +169,44 @@ export const socialLinks = [
     alt: "Github",
   },
 ];
+
+export const certifications = [
+  {
+    id: 1,
+    icon: "simple-icons:coursera",
+    date: "May 2023",
+    title: "Advanced React by Meta",
+    link: "https://www.coursera.org/account/accomplishments/certificate/ZRE92VAN2F56",
+    description:
+      "I developed advanced React skills, focusing on creating reusable components and leveraging design patterns for better maintainability. I also learned how to handle data flow effectively by integrating with remote servers and APIs.",
+    details: [
+      {
+        icon: "mdi:timer-sand",
+        text: "26 hours",
+      },
+      {
+        icon: "mdi:achievement",
+        text: "98.80%",
+      },
+    ],
+  },
+  {
+    id: 2,
+    icon: "simple-icons:freecodecamp",
+    date: "June 2023",
+    title: "Responsive Web Design",
+    link: "https://www.coursera.org/account/accomplishments/certificate/ZRE92VAN2F56",
+    description:
+      "This course focused on the principles of responsive design and how to implement them using modern HTML and CSS techniques.",
+    details: [
+      {
+        icon: "mdi:timer-sand",
+        text: "26 hours",
+      },
+      {
+        icon: "mdi:achievement",
+        text: "98.80%",
+      },
+    ],
+  },
+];

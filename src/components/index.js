@@ -12,6 +12,8 @@ import About from "./About";
 import Projects from "./Projects";
 import Contacts from "./Contacts";
 import Education from "./Education";
+import Certifications from "./Certifications";
+import CertificationItem from "./CertificationItem";
 
 export {
   Navbar,
@@ -28,4 +30,6 @@ export {
   Projects,
   Contacts,
   Education,
+  Certifications,
+  CertificationItem,
 };

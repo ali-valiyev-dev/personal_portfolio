@@ -7,6 +7,7 @@ import {
   Projects,
   Skills,
   Education,
+  Certifications,
 } from "./components";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Skills />
         <Experience />
         <Education />
+        <Certifications />
         <About />
         <Projects />
         <Contacts />
