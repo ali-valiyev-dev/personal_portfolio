@@ -6,6 +6,7 @@ import {
   Navbar,
   Projects,
   Skills,
+  Education,
 } from "./components";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Hero />
         <Skills />
         <Experience />
+        <Education />
         <About />
         <Projects />
         <Contacts />

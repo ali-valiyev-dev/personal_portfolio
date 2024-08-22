@@ -11,6 +11,7 @@ import Heading from "./Heading";
 import About from "./About";
 import Projects from "./Projects";
 import Contacts from "./Contacts";
+import Education from "./Education";
 
 export {
   Navbar,
@@ -26,4 +27,5 @@ export {
   About,
   Projects,
   Contacts,
+  Education,
 };
