@@ -1,5 +1,5 @@
+import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { ProjectItem } from "./components";
-import { Container, SectionTitle } from "../common";
 import { projects } from "../../constants";
 
 const Projects = () => {
@@ -11,14 +11,14 @@ const Projects = () => {
       <div className="flex flex-col gap-5">
         <SectionTitle title="My Projects" />
 
-        <div className="flex flex-col items-center gap-5 xl:gap-8">
+        <ItemsWrapper>
           {projects.map(project => (
             <ProjectItem
               key={project.id}
               {...project}
             />
           ))}
-        </div>
+        </ItemsWrapper>
       </div>
     </Container>
   );

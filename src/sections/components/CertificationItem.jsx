@@ -10,7 +10,7 @@ const CertificationItem = ({
   details,
 }) => {
   return (
-    <div className="text-primary-white max-w-[1050px] rounded-xl border border-zinc-800 px-6 py-7">
+    <div className="text-primary-white w-full rounded-xl border border-zinc-800 px-6 py-7">
       <div className="flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row gap-7 h-max md:items-center">
           <div className="flex items-center justify-between">
