@@ -10,7 +10,7 @@ const ExperienceItem = ({
   techStack,
 }) => {
   return (
-    <div className="rounded-xl hover:bg-zinc-800 transition-colors duration-300 border border-zinc-800 px-6 py-7">
+    <div className="rounded-xl border border-zinc-800 px-6 py-7">
       <div className="flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex gap-7 h-max items-center">
           <img

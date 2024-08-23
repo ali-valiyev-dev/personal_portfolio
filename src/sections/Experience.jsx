@@ -1,42 +1,26 @@
-import { SectionTitle } from "../common";
+import { Container, SectionTitle } from "../common";
 import { ExperienceItem } from "./components";
 import { experiences } from "../../constants";
 
 const Experience = () => {
   return (
-    <section
+    <Container
       id="experience"
-      className="bg-primary-black">
-      <div className="text-primary-white mx-auto max-w-screen-2xl px-4 md:px-14 xl:px-28 py-10 xl:py-20 flex flex-col gap-12 items-center">
+      bgColor="bg-primary-black"
+      textColor="text-primary-white">
+      <div className="flex flex-col gap-5 xl:px-6">
         <SectionTitle title="My Experience" />
 
-        <div className="flex flex-wrap md:gap-x-[40px] xl:gap-x-[71px] gap-y-5 xl:gap-y-8 max-w-[1050px]">
-          {experiences.map(
-            (
-              {
-                companyLogo,
-                companyName,
-                position,
-                workPeriod,
-                description,
-                techStack,
-              },
-              index
-            ) => (
-              <ExperienceItem
-                key={index}
-                companyLogo={companyLogo}
-                companyName={companyName}
-                position={position}
-                workPeriod={workPeriod}
-                description={description}
-                techStack={techStack}
-              />
-            )
-          )}
+        <div className="flex flex-col items-center gap-5 xl:gap-8">
+          {experiences.map((experience, index) => (
+            <ExperienceItem
+              key={index}
+              {...experience}
+            />
+          ))}
         </div>
       </div>
-    </section>
+    </Container>
   );
 };
 

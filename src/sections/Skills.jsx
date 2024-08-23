@@ -1,14 +1,16 @@
 import { skills } from "../../constants";
 import { SkillItem } from "./components";
-import { SectionTitle } from "../common";
+import { Container, SectionTitle } from "../common";
 
 const Skills = () => {
   return (
-    <section id="skills">
-      <div className="mx-auto max-w-screen-2xl px-4 md:px-14 xl:px-28 py-10 xl:py-28 flex flex-col gap-12 lg:gap-20 xl:items-center">
+    <Container
+      id="skills"
+      bgColor="bg-primary-white"
+      textColor="text-primary-black">
+      <div className="flex flex-col gap-5 items-center">
         <SectionTitle title="My Skills" />
-
-        <div className="flex justify-center flex-wrap gap-5 md:gap-x-[40px] xl:gap-x-[71px] md:gap-y-10">
+        <div className="flex justify-center flex-wrap py-10 gap-5 xl:gap-x-16 xl:gap-y-10">
           {skills.map(({ iconDark, iconLight, label, alt }) => (
             <SkillItem
               key={label}
@@ -20,7 +22,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Container>
   );
 };
 

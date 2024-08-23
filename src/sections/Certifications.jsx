@@ -1,16 +1,17 @@
+import { Container, SectionTitle } from "../common";
 import { CertificationItem } from "./components";
-import { SectionTitle } from "../common";
 import { certifications } from "../../constants";
 
 const Certifications = () => {
   return (
-    <section
+    <Container
       id="certifications"
-      className="bg-primary-black">
-      <div className="text-primary-white mx-auto max-w-screen-2xl px-4 md:px-14 xl:px-28 py-10 xl:py-20 flex flex-col gap-12 items-center">
+      bgColor="bg-primary-black"
+      textColor="text-primary-white">
+      <div className="flex flex-col gap-5 xl:px-6">
         <SectionTitle title="My Certifications" />
 
-        <div className="flex flex-col gap-y-5 xl:gap-y-8">
+        <div className="flex flex-col items-center gap-5 xl:gap-8">
           {certifications.map(certification => (
             <CertificationItem
               key={certification.id}
@@ -19,7 +20,7 @@ const Certifications = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Container>
   );
 };
 

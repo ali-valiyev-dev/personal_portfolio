@@ -1,10 +1,13 @@
-import { SocialLink, Heading, ResumeLink } from "../common";
-import { socialLinks } from "../../constants";
+import { SocialLink, Heading, ResumeLink, Container } from "../common";
+import { socialLinks } from "/constants";
 
 const Hero = () => {
   return (
-    <section>
-      <div className=" mx-auto max-w-screen-2xl xl:items-end px-4 md:px-14 xl:px-28 py-10 xl:py-14 flex flex-col-reverse gap-12 lg:gap-20 xl:gap-0  lg:flex-row">
+    <Container
+      id="hero"
+      bgColor="bg-primary-white"
+      textColor="text-primary-black">
+      <div className="flex flex-col-reverse gap-12 lg:gap-20 xl:gap-0  lg:flex-row">
         <div className="lg:w-1/2">
           <Heading
             text={[
@@ -25,12 +28,10 @@ const Hero = () => {
           </p>
 
           <div className="mt-8 xl:mt-24 flex gap-6 xl:gap-8">
-            {socialLinks.map(({ href, icon, alt }, index) => (
+            {socialLinks.map((link, index) => (
               <SocialLink
                 key={index}
-                href={href}
-                icon={icon}
-                alt={alt}
+                {...link}
               />
             ))}
 
@@ -45,7 +46,7 @@ const Hero = () => {
           />
         </div>
       </div>
-    </section>
+    </Container>
   );
 };
 
