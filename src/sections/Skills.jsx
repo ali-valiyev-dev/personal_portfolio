@@ -1,6 +1,6 @@
-import { skills } from "../constants";
-import SkillItem from "./SkillItem";
-import SectionTitle from "./SectionTitle";
+import { skills } from "../../constants";
+import { SkillItem } from "./components";
+import { SectionTitle } from "../common";
 
 const Skills = () => {
   return (

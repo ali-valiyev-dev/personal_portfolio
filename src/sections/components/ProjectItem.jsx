@@ -12,8 +12,6 @@ const ProjectItem = ({
 }) => {
   const reverse = id % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse";
 
-  console.log(reverse);
-
   return (
     <div className={`flex flex-col ${reverse} gap-7 xl:gap-10`}>
       <figure className="border border-zinc-800 overflow-hidden rounded-xl w-full lg:w-1/2 flex items-center justify-center transition-colors duration-300 hover:border-zinc-700">

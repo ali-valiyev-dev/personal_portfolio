@@ -8,7 +8,7 @@ import {
   Skills,
   Education,
   Certifications,
-} from "./components";
+} from "./sections";
 
 function App() {
   return (
@@ -16,16 +16,20 @@ function App() {
       <header>
         <Navbar />
       </header>
+
       <main>
         <Hero />
         <Skills />
+        <Projects />
+        <About />
         <Experience />
         <Education />
         <Certifications />
-        <About />
-        <Projects />
-        <Contacts />
       </main>
+
+      <footer>
+        <Contacts />
+      </footer>
     </>
   );
 }

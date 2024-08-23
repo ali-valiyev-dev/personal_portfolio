@@ -1,7 +1,5 @@
-import Heading from "./Heading";
-import SocialLink from "./SocialLink";
-import ResumeLink from "./ResumeLink";
-import { socialLinks } from "../constants";
+import { SocialLink, Heading, ResumeLink } from "../common";
+import { socialLinks } from "../../constants";
 
 const Contacts = () => {
   return (

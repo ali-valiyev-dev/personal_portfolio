@@ -1,6 +1,6 @@
-import ProjectItem from "./ProjectItem";
-import SectionTitle from "./SectionTitle";
-import { projects } from "../constants";
+import { ProjectItem } from "./components";
+import { SectionTitle } from "../common";
+import { projects } from "../../constants";
 
 const Projects = () => {
   return (

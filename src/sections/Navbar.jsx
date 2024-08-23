@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import Logo from "./Logo";
+import { Logo } from "../common";
 
 const navLinks = [
   { href: "#skills", label: "Skills" },
@@ -9,6 +9,7 @@ const navLinks = [
   { href: "#about", label: "About Me" },
   { href: "#experience", label: "Experience" },
   { href: "#education", label: "Education" },
+  { href: "#contacts", label: "Contacts" },
 ];
 
 const Navbar = () => {

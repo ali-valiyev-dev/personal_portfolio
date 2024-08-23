@@ -1,6 +1,6 @@
-import SectionTitle from "./SectionTitle";
-import ExperienceItem from "./ExperienceItem";
-import { experiences } from "../constants";
+import { SectionTitle } from "../common";
+import { ExperienceItem } from "./components";
+import { experiences } from "../../constants";
 
 const Experience = () => {
   return (

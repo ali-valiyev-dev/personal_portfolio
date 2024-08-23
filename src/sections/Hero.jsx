@@ -1,7 +1,5 @@
-import Heading from "./Heading";
-import ResumeLink from "./ResumeLink.jsx";
-import SocialLink from "./SocialLink.jsx";
-import { socialLinks } from "../constants";
+import { SocialLink, Heading, ResumeLink } from "../common";
+import { socialLinks } from "../../constants";
 
 const Hero = () => {
   return (

@@ -1,6 +1,6 @@
-import CertificationItem from "./CertificationItem";
-import SectionTitle from "./SectionTitle";
-import { certifications } from "../constants";
+import { CertificationItem } from "./components";
+import { SectionTitle } from "../common";
+import { certifications } from "../../constants";
 
 const Certifications = () => {
   return (
