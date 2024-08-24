@@ -1,41 +1,17 @@
 import { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import { Logo } from "../common";
-
-const navLinks = [
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#about", label: "About Me" },
-  { href: "#experience", label: "Experience" },
-  { href: "#education", label: "Education" },
-  { href: "#contacts", label: "Contacts" },
-];
+import { navLinks } from "../../constants";
+import { MobileNavbar } from "./components";
+import { handleSmoothScroll } from "../../utils/helpers";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSmoothScroll = (event, targetId) => {
-    event.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-    setIsOpen(false);
-  };
-
   return (
     <nav>
-      <div className="mx-auto max-w-screen-2xl flex items-center justify-between px-4 md:px-14 xl:px-28 py-4">
-        {/* logo */}
-        <div>
-          <Logo />
-        </div>
+      <div className="mx-auto max-w-screen-2xl flex items-center justify-between px-4 md:px-14 xl:px-28 py-4 text-primary-black">
+        <Logo />
 
-        {/* desktop nav links */}
         <div className="hidden lg:flex">
           <ul className="flex items-center gap-8 text-xl font-semibold">
             {navLinks.map(link => (
@@ -52,50 +28,10 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* mobile nav links */}
-        <div className="flex lg:hidden items-center">
-          <button
-            type="button"
-            aria-label="Open Menu"
-            className="lg:hidden flex items-center justify-center"
-            onClick={() => setIsOpen(!isOpen)}>
-            <MenuIcon fontSize="large" />
-          </button>
-
-          <div
-            className={`bg-primary-white absolute inset-0 w-full overflow-hidden transition-max-height duration-500 ease-in-out z-50 ${
-              isOpen ? "max-h-screen border-b border-primary-black" : "max-h-0"
-            }`}>
-            <div className="flex justify-between my-4 px-4 md:px-14">
-              <div className="flex items-center">
-                <Logo />
-              </div>
-              <button
-                type="button"
-                aria-label="Close Menu"
-                className="flex items-center justify-center"
-                onClick={() => setIsOpen(prev => !prev)}>
-                <CloseIcon fontSize="large" />
-              </button>
-            </div>
-
-            <ul className="flex flex-col items-center justify-center my-10 text-xl text-primary-black">
-              {navLinks.map(link => (
-                <li
-                  key={link.href}
-                  className="w-full py-7 text-center active:bg-zinc-800 active:text-primary-white transition-all duration-200">
-                  <a
-                    href={link.href}
-                    onClick={e =>
-                      handleSmoothScroll(e, link.href.substring(1))
-                    }>
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <MobileNavbar
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
       </div>
     </nav>
   );

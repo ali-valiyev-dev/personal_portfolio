@@ -1,3 +1,12 @@
+export const navLinks = [
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#about", label: "About Me" },
+  { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
+  { href: "#contacts", label: "Contacts" },
+];
+
 export const skills = [
   {
     iconLight: "/icon-javascript-light.svg",
