@@ -7,8 +7,8 @@ const Hero = () => {
       id="hero"
       bgColor="bg-primary-white"
       textColor="text-primary-black">
-      <div className="flex flex-col-reverse gap-12 lg:gap-20 xl:gap-0  lg:flex-row">
-        <div className="lg:w-1/2">
+      <div className="flex flex-col-reverse gap-12 lg:gap-0 lg:flex-row">
+        <div className="lg:w-1/2 flex flex-col justify-end gap-8">
           <Headline
             text={[
               `Hello I'm`,
@@ -20,14 +20,14 @@ const Hero = () => {
             ]}
           />
 
-          <p className="mt-8 text-zinc-500">
-            Lorem ipsum dolor sit amet amet, consectetur adipiscing elit.
-            Quisque interdum, odio eget volutpat aliquet, neque ante hendrerit
-            libero, ac facilisis turpis metus sed nulla. Ut sit amet orci at
-            odio semper luctus.
+          <p className="text-zinc-500">
+            I&apos;m a Frontend Developer passionate about creating intuitive
+            and visually appealing web experiences. With a focus on detail and a
+            drive to exceed expectations, I&apos;m committed to delivering
+            impactful solutions and staying ahead in emerging technologies.
           </p>
 
-          <div className="mt-8 xl:mt-24 flex gap-6 xl:gap-8">
+          <div className="flex gap-6 xl:gap-8">
             {socialLinks.map((link, index) => (
               <SocialLink
                 key={index}
