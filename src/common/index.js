@@ -5,6 +5,8 @@ import ResumeLink from "./ResumeLink";
 import Logo from "./Logo";
 import Container from "./Container";
 import ItemsWrapper from "./ItemsWrapper";
+import NavLinksWrapper from "./NavLinksWrapper";
+import NavLink from "./NavLink";
 
 export {
   SocialLink,
@@ -14,4 +16,6 @@ export {
   ResumeLink,
   Container,
   ItemsWrapper,
+  NavLink,
+  NavLinksWrapper,
 };

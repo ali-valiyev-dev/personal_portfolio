@@ -1,17 +1,34 @@
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
-import { navLinks } from "../../../constants";
-import { Logo } from "../../common";
-import { handleSmoothScroll } from "../../../utils/helpers";
+import { navLinks, socialLinks } from "../../../constants";
+import {
+  Logo,
+  NavLink,
+  NavLinksWrapper,
+  ResumeLink,
+  SocialLink,
+} from "../../common";
 
 const MobileNavbar = ({ isOpen, setIsOpen }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   return (
     <div className="flex lg:hidden items-center">
       <button
         type="button"
         aria-label="Open Menu"
         className="lg:hidden flex items-center justify-center"
-        onClick={() => setIsOpen(!isOpen)}>
+        onClick={() => setIsOpen(true)}>
         <Icon
           icon="mdi:menu"
           width={32}
@@ -20,18 +37,16 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
       </button>
 
       <div
-        className={`bg-primary-white absolute inset-0 w-full overflow-hidden transition-max-height duration-500 ease-in-out z-50 ${
+        className={`bg-primary-white fixed left-0 top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden transition-max-height duration-500 ease-in-out z-50 ${
           isOpen ? "max-h-screen border-b border-primary-black" : "max-h-0"
         }`}>
-        <div className="flex justify-between my-4 px-4 md:px-14">
-          <div className="flex items-center">
-            <Logo />
-          </div>
+        <div className="flex items-center justify-between py-4 px-4 md:px-10 absolute top-0 left-0 w-full ">
+          <Logo />
           <button
             type="button"
             aria-label="Close Menu"
             className="flex items-center justify-center"
-            onClick={() => setIsOpen(prev => !prev)}>
+            onClick={() => setIsOpen(false)}>
             <Icon
               icon="mdi:close"
               width={32}
@@ -40,21 +55,26 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
           </button>
         </div>
 
-        <ul className="flex flex-col items-center justify-center my-10 text-xl text-primary-black">
-          {navLinks.map(link => (
-            <li
-              key={link.href}
-              className="w-full py-7 text-center active:bg-zinc-800 active:text-primary-white transition-all duration-200">
-              <a
-                href={link.href}
-                onClick={e =>
-                  handleSmoothScroll(e, link.href.substring(1), setIsOpen)
-                }>
-                {link.label}
-              </a>
-            </li>
+        <NavLinksWrapper>
+          {navLinks.map((link, index) => (
+            <NavLink
+              key={index}
+              setIsOpen={setIsOpen}
+              {...link}
+            />
           ))}
-        </ul>
+        </NavLinksWrapper>
+
+        <div className="absolute bottom-0 left-0 flex justify-center w-full gap-6 py-4">
+          {socialLinks.map((link, index) => (
+            <SocialLink
+              key={index}
+              {...link}
+            />
+          ))}
+
+          <ResumeLink />
+        </div>
       </div>
     </div>
   );
