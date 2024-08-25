@@ -1,4 +1,4 @@
-import { SocialLink, Heading, ResumeLink, Container } from "../common";
+import { SocialLink, Headline, ResumeLink, Container } from "../common";
 import { socialLinks } from "/constants";
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
       textColor="text-primary-black">
       <div className="flex flex-col-reverse gap-12 lg:gap-20 xl:gap-0  lg:flex-row">
         <div className="lg:w-1/2">
-          <Heading
+          <Headline
             text={[
               `Hello I'm`,
               "Ali Valiyev.",

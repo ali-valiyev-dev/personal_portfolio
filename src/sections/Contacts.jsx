@@ -1,4 +1,4 @@
-import { SocialLink, Heading, ResumeLink, Container } from "../common";
+import { SocialLink, Headline, ResumeLink, Container } from "../common";
 import { socialLinks } from "../../constants";
 
 const Contacts = () => {
@@ -9,7 +9,7 @@ const Contacts = () => {
       textColor="text-primary-black">
       <div className="flex flex-col xl:flex-row gap-8 xl:gap-16">
         <div className="w-full xl:w-1/2">
-          <Heading text={[`Let's`, "Talk for", "Something", "Special"]} />
+          <Headline text={[`Let's`, "Talk for", "Something", "Special"]} />
           <p className="mt-5 text-zinc-500">
             I seek to push the limits of creativity to create highly engaging,
             user-friendly, and memorable interactive experiences.

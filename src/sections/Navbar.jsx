@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Logo, NavLink, NavLinksWrapper } from "../common";
+import { Logo } from "../common";
 import { navLinks } from "../../constants";
-import { MobileNavbar } from "./components";
+import { MobileNavbar, NavLink, NavLinksWrapper } from "./components";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

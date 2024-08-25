@@ -1,14 +1,9 @@
 import { useEffect } from "react";
-import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
+import PropTypes from "prop-types";
 import { navLinks, socialLinks } from "../../../constants";
-import {
-  Logo,
-  NavLink,
-  NavLinksWrapper,
-  ResumeLink,
-  SocialLink,
-} from "../../common";
+import { Logo, ResumeLink, SocialLink } from "../../common";
+import { NavLinksWrapper, NavLink } from "../components";
 
 const MobileNavbar = ({ isOpen, setIsOpen }) => {
   useEffect(() => {
