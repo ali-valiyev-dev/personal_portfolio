@@ -1,4 +1,4 @@
-import { skills } from "../../constants";
+import { skills } from "/constants";
 import { SkillItem } from "./components";
 import { Container, SectionTitle } from "../common";
 

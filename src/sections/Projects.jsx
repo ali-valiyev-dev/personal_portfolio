@@ -1,6 +1,6 @@
 import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { ProjectItem } from "./components";
-import { projects } from "../../constants";
+import { projects } from "/constants";
 
 const Projects = () => {
   return (

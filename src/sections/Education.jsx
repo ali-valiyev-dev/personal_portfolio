@@ -1,4 +1,4 @@
-import { education } from "../../constants";
+import { education } from "/constants";
 import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { EducationItem } from "./components";
 

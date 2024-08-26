@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Logo } from "../common";
-import { navLinks } from "../../constants";
+import { navLinks } from "/constants";
 import { MobileNavbar, NavLink, NavLinksWrapper } from "./components";
 
 const Navbar = () => {

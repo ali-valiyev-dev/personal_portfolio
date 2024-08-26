@@ -1,5 +1,5 @@
 import { SocialLink, Headline, ResumeLink, Container } from "../common";
-import { socialLinks } from "../../constants";
+import { socialLinks } from "/constants";
 
 const Contacts = () => {
   return (

@@ -1,6 +1,6 @@
 import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { CertificationItem } from "./components";
-import { certifications } from "../../constants";
+import { certifications } from "/constants";
 
 const Certifications = () => {
   return (

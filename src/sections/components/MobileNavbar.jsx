@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import PropTypes from "prop-types";
-import { navLinks, socialLinks } from "../../../constants";
+import { navLinks, socialLinks } from "/constants";
 import { Logo, ResumeLink, SocialLink } from "../../common";
 import { NavLinksWrapper, NavLink } from "../components";
 
