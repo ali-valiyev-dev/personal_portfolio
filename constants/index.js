@@ -214,35 +214,51 @@ export const socialLinks = [
 
 export const certifications = [
   {
-    id: 1,
-    icon: "simple-icons:coursera",
-    date: "May 2023",
-    title: "Advanced React by Meta",
-    link: "https:www.coursera.org/account/accomplishments/certificate/ZRE92VAN2F56",
+    icon: "simple-icons:udemy",
+    date: "Jul 2024",
+    title: "The Ultimate React (Next.js) Course 2024 by Jonas Schmedtmann",
+    link: "https://www.udemy.com/certificate/UC-01438731-a72c-43a3-a434-969b7b50e46c",
     description:
-      "I developed advanced React skills, focusing on creating reusable components and leveraging design patterns for better maintainability. I also learned how to handle data flow effectively by integrating with remote servers and APIs.",
+      "Gained expertise in modern React techniques, including advanced state management, performance optimization, and styling with Tailwind CSS. Built real-world applications and mastered React's internal workings, state management with Redux, and cutting-edge features like React Server Components.",
     details: [
       {
-        icon: "mdi:timer-sand",
-        text: "26 hours",
+        icon: "solar:hourglass-outline",
+        text: "84 hours",
       },
       {
-        icon: "mdi:achievement",
-        text: "98.80%",
+        icon: "solar:medal-ribbons-star-outline",
+        text: "Bestseller",
       },
     ],
   },
   {
-    id: 2,
-    icon: "simple-icons:freecodecamp",
-    date: "June 2023",
-    title: "Responsive Web Design",
-    link: "https:www.coursera.org/account/accomplishments/certificate/ZRE92VAN2F56",
+    icon: "simple-icons:udemy",
+    date: "Feb 2023",
+    title: "The Complete JavaScript Course 2023 by Jonas Schmedtmann",
+    link: "https://www.udemy.com/certificate/UC-a6c7edb5-6b85-46f8-944d-16494df0020e",
     description:
-      "This course focused on the principles of responsive design and how to implement them using modern HTML and CSS techniques.",
+      "Developed advanced JavaScript skills, mastering ES6+ features, modern OOP, and asynchronous programming. Understood JavaScript's internals, and utilized tools like NPM, Parcel, and Babel while solving 50+ challenges to enhance problem-solving and coding workflows.",
     details: [
       {
-        icon: "mdi:timer-sand",
+        icon: "solar:hourglass-outline",
+        text: "69 hours",
+      },
+      {
+        icon: "solar:medal-ribbons-star-outline",
+        text: "Bestseller",
+      },
+    ],
+  },
+  {
+    icon: "simple-icons:coursera",
+    date: "May 2023",
+    title: "Advanced React Course by Meta",
+    link: "https:www.coursera.org/account/accomplishments/certificate/ZRE92VAN2F56",
+    description:
+      "Mastered creating robust and reusable React components with advanced techniques and design patterns. Learned to interact with remote servers for data fetching and posting via APIs, and integrated popular React libraries to streamline and optimize application development.",
+    details: [
+      {
+        icon: "solar:hourglass-outline",
         text: "26 hours",
       },
       {

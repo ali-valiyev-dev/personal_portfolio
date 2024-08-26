@@ -12,10 +12,10 @@ const Certifications = () => {
         <SectionTitle title="My Certifications" />
 
         <ItemsWrapper>
-          {certifications.map(certification => (
+          {certifications.map((cert, index) => (
             <CertificationItem
-              key={certification.id}
-              {...certification}
+              key={index}
+              {...cert}
             />
           ))}
         </ItemsWrapper>

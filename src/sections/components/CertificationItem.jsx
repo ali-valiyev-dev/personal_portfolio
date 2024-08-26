@@ -21,35 +21,39 @@ const CertificationItem = ({
             />
             <span className="md:hidden text-nowrap">{date}</span>
           </div>
-          <a
-            href={link}
-            className="flex items-center gap-2 text-xl xl:text-2xl hover:underline hover:text-zinc-500 transition-all duration-300">
-            {title}
-            <Icon
-              icon="quill:link-out"
-              width={20}
-              height={20}
-            />
-          </a>
+          <h4 className="text-xl xl:text-2xl">{title}</h4>
         </div>
         <span className="hidden md:flex text-nowrap">{date}</span>
       </div>
 
-      <p className="mt-7 text-zinc-500">{description}</p>
+      <p className="mt-7 text-zinc-400">{description}</p>
 
-      <div className="flex items-center gap-5 mt-7 text-zinc-500">
-        {details.map((detail, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-1">
-            <Icon
-              icon={detail.icon}
-              width={24}
-              height={24}
-            />
-            <span className="text-zinc-300 text-nowrap">{detail.text}</span>
-          </div>
-        ))}
+      <div className="flex items-center justify-between  mt-7">
+        <div className="flex items-center gap-5 text-zinc-400">
+          {details.map(({ icon, text }, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-1">
+              <Icon
+                icon={icon}
+                width={24}
+                height={24}
+              />
+              <span className="text-zinc-300 text-nowrap">{text}</span>
+            </div>
+          ))}
+        </div>
+
+        <a
+          href={link}
+          className="flex items-center gap-1 text-base hover:underline text-zinc-300 hover:text-zinc-400 transition-all duration-300">
+          See More{" "}
+          <Icon
+            icon="quill:link-out"
+            width={16}
+            height={16}
+          />
+        </a>
       </div>
     </div>
   );
