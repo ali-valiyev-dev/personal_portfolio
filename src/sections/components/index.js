@@ -5,6 +5,7 @@ import CertificationItem from "./CertificationItem";
 import MobileNavbar from "./MobileNavbar";
 import NavLink from "./NavLink";
 import NavLinksWrapper from "./NavLinksWrapper";
+import EducationItem from "./EducationItem";
 
 export {
   SkillItem,
@@ -14,4 +15,5 @@ export {
   MobileNavbar,
   NavLink,
   NavLinksWrapper,
+  EducationItem,
 };

@@ -111,6 +111,19 @@ export const experiences = [
   },
 ];
 
+export const education = [
+  {
+    universityLogo: "/khazar_university_logo.png",
+    university: "Atl Tech",
+    major: "BSc in Business Management at Khazar University",
+    studyYears: "Sep 2016 - Jan 2022",
+    description:
+      "My academic journey at Khazar University honed my strategic thinking, project management, and analytical skills. These experiences, combined with my passion for technology, have provided a solid foundation to excel in frontend development.",
+    relevantCoursework:
+      "Digital Marketing, Entrepreneurship, Project Management, Organizational Behavior, Business Analytics",
+  },
+];
+
 export const projects = [
   {
     id: 1,
@@ -155,24 +168,32 @@ export const projects = [
     title: "Crypto Screener Application",
     description:
       "I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.",
-    previewLink: "#",
-    repoLink: "#",
+    previewLink: "https://ali-personal-portfolio.netlify.app",
+    repoLink: "https://github.com/ali-valiyev-dev/personal_portfolio",
     tech: [
       {
-        icon: "simple-icons:mui",
-        name: "MaterialUI",
+        icon: "cib:greensock",
+        name: "GSAP",
       },
       {
-        icon: "mdi:vuejs",
-        name: "Vue",
+        icon: "simple-icons:tailwindcss",
+        name: "TailwindCSS",
       },
       {
-        icon: "simple-icons:jira",
-        name: "Jira",
+        icon: "simple-icons:react",
+        name: "React.js",
       },
       {
-        icon: "simple-icons:jira",
-        name: "Jira",
+        icon: "simple-icons:sentry",
+        name: "Sentry",
+      },
+      {
+        icon: "simple-icons:threedotjs",
+        name: "Three.js",
+      },
+      {
+        icon: "simple-icons:vite",
+        name: "Vite",
       },
     ],
   },

@@ -10,35 +10,37 @@ const ExperienceItem = ({
   techStack,
 }) => {
   return (
-    <div className="w-full rounded-xl border border-zinc-800 px-6 py-7">
-      <div className="flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
-        <div className="flex gap-7 h-max items-center">
-          <img
-            src={companyLogo}
-            alt={`${companyName} logo`}
-            width={56}
-            height={56}
-          />
-          <h4 className=" text-xl xl:text-2xl">{position}</h4>
+    <div className="text-zinc-300 rounded-xl border border-zinc-800 px-6 py-7">
+      <div className="relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
+        <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
+          <div className="flex justify-between items-center">
+            <img
+              src={companyLogo}
+              alt={`${companyName} logo`}
+              width={56}
+              height={56}
+            />
+
+            <span className="flex text-nowrap md:hidden">{workPeriod} </span>
+          </div>
+          <h4 className="text-primary-white text-xl xl:text-2xl">{position}</h4>
         </div>
-
-        <span className=" text-base text-zinc-300 ">{workPeriod}</span>
+        <span className="hidden md:flex text-nowrap">{workPeriod}</span>
       </div>
-
-      <p className="text-base text-zinc-300 mt-7">{description}</p>
+      <p className="mt-7 text-zinc-400">{description}</p>
 
       <div className="flex gap-2 flex-wrap mt-7 ">
-        {techStack.map((tech, index) => (
+        {techStack.map(({ icon, name }, index) => (
           <div
             key={index}
-            className="w-max flex gap-1 items-center border border-zinc-500 rounded px-3 py-2">
+            className="w-max flex gap-1 items-center border border-zinc-500 text-zinc-400 rounded px-3 py-2">
             <Icon
-              icon={tech.icon}
+              icon={icon}
               width="24"
               height="24"
-              className=" text-zinc-300"
+              className="text-zinc-300"
             />
-            <span className="text-base text-zinc-300">{tech.name}</span>
+            <span>{name}</span>
           </div>
         ))}
       </div>
