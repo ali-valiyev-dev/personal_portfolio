@@ -12,4 +12,11 @@ const handleSmoothScroll = (event, targetId, setIsOpen) => {
   }
 };
 
-export { handleSmoothScroll };
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+export { handleSmoothScroll, scrollToTop };

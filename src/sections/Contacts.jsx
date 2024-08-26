@@ -1,4 +1,10 @@
-import { SocialLink, Headline, ResumeLink, Container } from "../common";
+import {
+  SocialLink,
+  Headline,
+  ResumeLink,
+  Container,
+  ScrollToTopMobile,
+} from "../common";
 import { socialLinks } from "/constants";
 
 const Contacts = () => {
@@ -10,24 +16,25 @@ const Contacts = () => {
       <div className="flex flex-col xl:flex-row gap-8 xl:gap-16">
         <div className="w-full xl:w-1/2">
           <Headline text={[`Let's`, "Talk for", "Something", "Special"]} />
-          <p className="mt-5 text-zinc-500">
-            I seek to push the limits of creativity to create highly engaging,
-            user-friendly, and memorable interactive experiences.
+          <p className="mt-5 text-zinc-500 max-w-[600px]">
+            Seeking a frontend developer to elevate your team? Let’s connect and
+            explore how I can bring innovative, high-quality web solutions to
+            your projects.
           </p>
         </div>
 
         <div className="w-full xl:w-1/2 flex flex-col gap-7 xl:gap-14">
-          <div className="text-xl xl:text-2xl font-semibold">
+          <div className="flex flex-col gap-5 text-xl xl:text-2xl font-semibold w-max">
             <a
-              href="mailto:youremail@gmail.com"
+              href="mailto:ali.valiyev.dev@gmail.com"
               rel="noopener noreferrer"
               className="hover:underline block">
-              youremail@gmail.com
+              ali.valiyev.dev@gmail.com
             </a>
             <a
               href="tel:+994708452035"
               className="hover:underline block">
-              +994-70-845-20-35
+              +994708452035
             </a>
           </div>
 
@@ -39,6 +46,8 @@ const Contacts = () => {
               />
             ))}
             <ResumeLink />
+
+            <ScrollToTopMobile />
           </div>
         </div>
       </div>

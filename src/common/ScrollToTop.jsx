@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
+import { scrollToTop } from "/utils/helpers";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,13 +11,6 @@ const ScrollToTop = () => {
     } else {
       setIsVisible(false);
     }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
   };
 
   useEffect(() => {
