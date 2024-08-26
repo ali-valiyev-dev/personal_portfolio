@@ -10,14 +10,13 @@ const Skills = () => {
       textColor="text-primary-black">
       <div className="flex flex-col gap-5 items-center">
         <SectionTitle title="My Skills" />
-        <div className="flex justify-center flex-wrap py-10 gap-5 xl:gap-x-16 xl:gap-y-10">
-          {skills.map(({ iconDark, iconLight, label, alt }) => (
+        <div
+          className="flex flex-wrap justify-center lg:py-10
+        gap-5 lg:gap-10 xl:gap-x-[70px]">
+          {skills.map((skill, index) => (
             <SkillItem
-              key={label}
-              iconDark={iconDark}
-              iconLight={iconLight}
-              label={label}
-              alt={alt}
+              key={index}
+              {...skill}
             />
           ))}
         </div>

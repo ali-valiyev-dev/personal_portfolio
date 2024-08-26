@@ -9,52 +9,64 @@ export const navLinks = [
 
 export const skills = [
   {
-    iconLight: "/icon-javascript-light.svg",
-    iconDark: "/icon-javascript-dark.svg",
-    label: "Javascript",
-    alt: "Javascript",
+    skill: "Javascript",
+    icon: "simple-icons:javascript",
   },
   {
-    iconLight: "/icon-typescript-light.svg",
-    iconDark: "/icon-typescript-dark.svg",
-    label: "Typescript",
-    alt: "Typescript",
+    skill: "Typescript",
+    icon: "simple-icons:typescript",
   },
   {
-    iconLight: "/icon-react-light.svg",
-    iconDark: "/icon-react-dark.svg",
-    label: "React.js",
-    alt: "React.js",
+    skill: "React.js",
+    icon: "simple-icons:react",
   },
   {
-    iconLight: "/icon-nextjs-light.svg",
-    iconDark: "/icon-nextjs-dark.svg",
-    label: "Next.js",
-    alt: "Next.js",
+    skill: "Next.js",
+    icon: "simple-icons:nextdotjs",
   },
   {
-    iconLight: "/icon-sass-light.svg",
-    iconDark: "/icon-sass-dark.svg",
-    label: "Sass",
-    alt: "Sass",
+    skill: "Redux",
+    icon: "simple-icons:redux",
   },
   {
-    iconLight: "/icon-tailwindcss-light.svg",
-    iconDark: "/icon-tailwindcss-dark.svg",
-    label: "Tailwindcss",
-    alt: "Tailwindcss",
+    skill: "React Query",
+    icon: "simple-icons:reactquery",
   },
   {
-    iconLight: "/icon-git-light.svg",
-    iconDark: "/icon-git-dark.svg",
-    label: "Git",
-    alt: "Git",
+    skill: "Vue.js",
+    icon: "simple-icons:vuedotjs",
   },
   {
-    iconLight: "/icon-figma-light.svg",
-    iconDark: "/icon-figma-dark.svg",
-    label: "Figma",
-    alt: "Figma",
+    skill: "Vuetify",
+    icon: "simple-icons:vuetify",
+  },
+  {
+    skill: "Tailwindcss",
+    icon: "simple-icons:tailwindcss",
+  },
+  {
+    skill: "Sass/Scss",
+    icon: "simple-icons:sass",
+  },
+  {
+    skill: "Material-UI",
+    icon: "simple-icons:mui",
+  },
+  {
+    skill: "Supabase",
+    icon: "simple-icons:supabase",
+  },
+  {
+    skill: "Payload",
+    icon: "simple-icons:payloadcms",
+  },
+  {
+    skill: "GSAP",
+    icon: "simple-icons:greensock",
+  },
+  {
+    skill: "Figma",
+    icon: "simple-icons:figma",
   },
 ];
 
@@ -185,7 +197,7 @@ export const certifications = [
     icon: "simple-icons:coursera",
     date: "May 2023",
     title: "Advanced React by Meta",
-    link: "https://www.coursera.org/account/accomplishments/certificate/ZRE92VAN2F56",
+    link: "https:www.coursera.org/account/accomplishments/certificate/ZRE92VAN2F56",
     description:
       "I developed advanced React skills, focusing on creating reusable components and leveraging design patterns for better maintainability. I also learned how to handle data flow effectively by integrating with remote servers and APIs.",
     details: [
@@ -204,7 +216,7 @@ export const certifications = [
     icon: "simple-icons:freecodecamp",
     date: "June 2023",
     title: "Responsive Web Design",
-    link: "https://www.coursera.org/account/accomplishments/certificate/ZRE92VAN2F56",
+    link: "https:www.coursera.org/account/accomplishments/certificate/ZRE92VAN2F56",
     description:
       "This course focused on the principles of responsive design and how to implement them using modern HTML and CSS techniques.",
     details: [
