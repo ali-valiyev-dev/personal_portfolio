@@ -46,6 +46,7 @@ const CertificationItem = ({
 
         <a
           href={link}
+          target="_blank"
           className="flex items-center gap-1 text-base hover:underline text-zinc-300 hover:text-zinc-400 transition-all duration-300">
           See More{" "}
           <Icon

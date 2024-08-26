@@ -201,14 +201,14 @@ export const projects = [
 
 export const socialLinks = [
   {
-    href: "#",
+    href: "https://www.linkedin.com/in/ali-valiyev-dev",
     icon: "mdi:linkedin",
-    alt: "Linkedin",
+    alt: "LinkedIn",
   },
   {
-    href: "#",
+    href: "https://github.com/ali-valiyev-dev",
     icon: "simple-icons:github",
-    alt: "Github",
+    alt: "GitHub",
   },
 ];
 
@@ -222,7 +222,7 @@ export const certifications = [
       "Gained expertise in modern React techniques, including advanced state management, performance optimization, and styling with Tailwind CSS. Built real-world applications and mastered React's internal workings, state management with Redux, and cutting-edge features like React Server Components.",
     details: [
       {
-        icon: "solar:hourglass-outline",
+        icon: "solar:clock-circle-outline",
         text: "84 hours",
       },
       {
@@ -240,7 +240,7 @@ export const certifications = [
       "Developed advanced JavaScript skills, mastering ES6+ features, modern OOP, and asynchronous programming. Understood JavaScript's internals, and utilized tools like NPM, Parcel, and Babel while solving 50+ challenges to enhance problem-solving and coding workflows.",
     details: [
       {
-        icon: "solar:hourglass-outline",
+        icon: "solar:clock-circle-outline",
         text: "69 hours",
       },
       {
@@ -258,7 +258,7 @@ export const certifications = [
       "Mastered creating robust and reusable React components with advanced techniques and design patterns. Learned to interact with remote servers for data fetching and posting via APIs, and integrated popular React libraries to streamline and optimize application development.",
     details: [
       {
-        icon: "solar:hourglass-outline",
+        icon: "solar:clock-circle-outline",
         text: "26 hours",
       },
       {
