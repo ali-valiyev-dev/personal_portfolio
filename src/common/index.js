@@ -5,6 +5,7 @@ import ResumeLink from "./ResumeLink";
 import Logo from "./Logo";
 import Container from "./Container";
 import ItemsWrapper from "./ItemsWrapper";
+import ScrollToTop from "./ScrollToTop";
 
 export {
   SocialLink,
@@ -14,4 +15,5 @@ export {
   ResumeLink,
   Container,
   ItemsWrapper,
+  ScrollToTop,
 };
