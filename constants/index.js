@@ -202,7 +202,7 @@ export const projects = [
 export const socialLinks = [
   {
     href: "https://www.linkedin.com/in/ali-valiyev-dev",
-    icon: "mdi:linkedin",
+    icon: "simple-icons:linkedin",
     alt: "LinkedIn",
   },
   {
