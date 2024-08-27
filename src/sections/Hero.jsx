@@ -43,6 +43,7 @@ const Hero = () => {
           <img
             src="/hero.png"
             alt="Hero"
+            loading="eager"
           />
         </div>
       </div>

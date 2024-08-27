@@ -7,6 +7,7 @@ import Container from "./Container";
 import ItemsWrapper from "./ItemsWrapper";
 import ScrollToTop from "./ScrollToTop";
 import ScrollToTopMobile from "./ScrollToTopMobile";
+import Spinner from "./Spinner";
 
 export {
   SocialLink,
@@ -18,4 +19,5 @@ export {
   ItemsWrapper,
   ScrollToTop,
   ScrollToTopMobile,
+  Spinner,
 };

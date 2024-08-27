@@ -1,12 +1,16 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
-import { ScrollToTop } from "./common";
+import { Spinner } from "./common";
+
+const App = lazy(() => import("./App.jsx"));
+const ScrollToTop = lazy(() => import("./common/ScrollToTop.jsx"));
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-    <ScrollToTop />
+    <Suspense fallback={<Spinner />}>
+      <App />
+      <ScrollToTop />
+    </Suspense>
   </StrictMode>
 );
