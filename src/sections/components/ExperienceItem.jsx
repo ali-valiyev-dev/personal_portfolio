@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
+import useAnimation from "/utils/hooks/useAnimations";
 
 const ExperienceItem = ({
   companyLogo,
@@ -9,9 +10,15 @@ const ExperienceItem = ({
   description,
   techStack,
 }) => {
+  useAnimation([
+    {
+      selector: ".experience-item-fade-in",
+    },
+  ]);
+
   return (
-    <div className="text-zinc-300 rounded-xl border border-zinc-800 px-6 py-7">
-      <div className="relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
+    <div className="experience-item-fade-in text-zinc-300 rounded-xl border border-zinc-800 px-6 py-7">
+      <div className="experience-item-fade-in relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
             <img
@@ -27,13 +34,15 @@ const ExperienceItem = ({
         </div>
         <span className="hidden md:flex text-nowrap">{workPeriod}</span>
       </div>
-      <p className="mt-7 text-zinc-400">{description}</p>
+      <p className="experience-item-fade-in mt-7 text-zinc-400">
+        {description}
+      </p>
 
       <div className="flex gap-2 flex-wrap mt-7 ">
         {techStack.map(({ icon, name }, index) => (
           <div
             key={index}
-            className="w-max flex gap-1 items-center border border-zinc-500 text-zinc-400 rounded px-3 py-2">
+            className="experience-item-fade-in w-max flex gap-1 items-center border border-zinc-500 text-zinc-400 rounded px-3 py-2">
             <Icon
               icon={icon}
               width="24"

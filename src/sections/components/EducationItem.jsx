@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import useAnimation from "/utils/hooks/useAnimations";
 
 const EducationItem = ({
   universityLogo,
@@ -8,9 +9,15 @@ const EducationItem = ({
   description,
   relevantCoursework,
 }) => {
+  useAnimation([
+    {
+      selector: ".education-item-fade-in",
+    },
+  ]);
+
   return (
-    <div className="rounded-xl border border-zinc-800 px-6 py-7">
-      <div className="relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
+    <div className="education-item-fade-in rounded-xl border border-zinc-800 px-6 py-7">
+      <div className="education-item-fade-in relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
             <img
@@ -28,10 +35,10 @@ const EducationItem = ({
           {studyYears}
         </span>
       </div>
-      <p className="mt-7 text-zinc-400">{description}</p>
-      <p className="mt-7 text-zinc-400">
+      <p className="education-item-fade-in mt-7 text-zinc-400">{description}</p>
+      <p className="education-item-fade-in mt-7 text-zinc-400">
         <span className="font-semibold text-zinc-300">
-          Relevant Coursework:{" "}
+          Relevant Coursework:
         </span>{" "}
         {relevantCoursework}
       </p>

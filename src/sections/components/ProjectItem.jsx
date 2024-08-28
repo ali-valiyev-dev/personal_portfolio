@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
+import useAnimation from "/utils/hooks/useAnimations";
 
 const ProjectItem = ({
   id,
@@ -10,11 +11,17 @@ const ProjectItem = ({
   previewLink,
   tech,
 }) => {
+  useAnimation([
+    {
+      selector: ".project-item-fade-in",
+    },
+  ]);
+
   const reverse = id % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse";
 
   return (
     <div className={`w-full flex flex-col ${reverse} gap-7 xl:gap-10`}>
-      <figure className="border border-zinc-800 overflow-hidden rounded-xl w-full lg:w-1/2 flex items-center justify-center transition-colors duration-300 hover:border-zinc-700">
+      <figure className="project-item-fade-in border border-zinc-800 overflow-hidden rounded-xl w-full lg:w-1/2 flex items-center justify-center transition-colors duration-300 hover:border-zinc-700">
         <a
           target="_blank"
           href={previewLink}>
@@ -27,7 +34,7 @@ const ProjectItem = ({
       </figure>
 
       <div className="w-full lg:w-1/2 flex flex-col gap-5 relative">
-        <div className="flex items-center justify-between">
+        <div className="project-item-fade-in flex items-center justify-between">
           <span className="font-bold text-2xl xl:text-5xl">
             {id.toString().padStart(2, "0")}
           </span>
@@ -60,14 +67,16 @@ const ProjectItem = ({
           </div>
         </div>
 
-        <h4 className="font-semibold text-xl xl:text-3xl">{title}</h4>
-        <p className="text-zinc-500">{description}</p>
+        <h4 className="project-item-fade-in font-semibold text-xl xl:text-3xl">
+          {title}
+        </h4>
+        <p className="project-item-fade-in text-zinc-500">{description}</p>
 
         <div className="flex gap-1 items-center flex-wrap xl:absolute xl:bottom-0">
           {tech.map((tech, index) => (
             <div
               key={index}
-              className="w-max flex gap-1 items-center border border-zinc-800 rounded px-2 py-1.5">
+              className="project-item-fade-in w-max flex gap-1 items-center border border-zinc-800 rounded px-2 py-1.5">
               <Icon
                 icon={tech.icon}
                 className="w-5 h-5 xl:w-6 xl:h-6 text-zinc-400"

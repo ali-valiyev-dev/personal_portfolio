@@ -1,3 +1,4 @@
+import useAnimation from "/utils/hooks/useAnimations";
 import {
   SocialLink,
   Headline,
@@ -8,15 +9,21 @@ import {
 import { socialLinks } from "/constants";
 
 const Contacts = () => {
+  useAnimation([
+    {
+      selector: ".contacts-fade-in",
+    },
+  ]);
+
   return (
     <Container
       id="contacts"
       bgColor="bg-primary-white"
       textColor="text-primary-black">
       <div className="flex flex-col xl:flex-row gap-8 xl:gap-16">
-        <div className="w-full xl:w-1/2">
+        <div className="contacts-fade-in w-full xl:w-1/2">
           <Headline text={[`Let's`, "Talk for", "Something", "Special"]} />
-          <p className="mt-5 text-zinc-500 max-w-[600px]">
+          <p className="contacts-fade-in mt-5 text-zinc-500 max-w-[600px]">
             Seeking a frontend developer to elevate your team? Let’s connect and
             explore how I can bring innovative, high-quality web solutions to
             your projects.
@@ -28,17 +35,17 @@ const Contacts = () => {
             <a
               href="mailto:ali.valiyev.dev@gmail.com"
               rel="noopener noreferrer"
-              className="hover:underline block">
+              className="contacts-fade-in hover:underline block">
               ali.valiyev.dev@gmail.com
             </a>
             <a
               href="tel:+994708452035"
-              className="hover:underline block">
+              className="contacts-fade-in hover:underline block">
               +994708452035
             </a>
           </div>
 
-          <div className="flex gap-6">
+          <div className="contacts-fade-in flex gap-6">
             {socialLinks.map((link, index) => (
               <SocialLink
                 key={index}

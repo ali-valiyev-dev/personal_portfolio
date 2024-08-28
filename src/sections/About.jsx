@@ -1,13 +1,20 @@
+import useAnimation from "/utils/hooks/useAnimations";
 import { Container, SectionTitle } from "../common";
 
 const About = () => {
+  useAnimation([
+    {
+      selector: ".about-fade-in",
+    },
+  ]);
+
   return (
     <Container
       id="about"
       bgColor="bg-primary-white"
       textColor="text-primary-black">
       <div className="flex flex-col lg:flex-row gap-5 items-start">
-        <figure className="w-full lg:w-1/2 flex items-center justify-center">
+        <figure className="about-fade-in w-full lg:w-1/2 flex items-center justify-center">
           <img
             src="/me.png"
             alt="Portrait of the developer"
@@ -15,12 +22,12 @@ const About = () => {
           />
         </figure>
 
-        <article className="w-full lg:w-1/2 flex flex-col gap-5">
-          <div className="w-full lg:w-max">
+        <article className="about-fade-in w-full lg:w-1/2 flex flex-col gap-5">
+          <div className="about-fade-in w-full lg:w-max">
             <SectionTitle title="About Me" />
           </div>
 
-          <p className="text-zinc-500 text-base">
+          <p className="about-fade-in text-zinc-500 text-base">
             I&apos;m a passionate, self-proclaimed designer who specializes in
             full stack development (React.js & Node.js). I am very enthusiastic
             about bringing the technical and visual aspects of digital products
