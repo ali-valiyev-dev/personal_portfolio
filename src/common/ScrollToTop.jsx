@@ -24,7 +24,7 @@ const ScrollToTop = () => {
     <button
       type="button"
       onClick={scrollToTop}
-      className={`hidden xl:block fixed bottom-20 right-8 p-3 bg-primary rounded border-2 border-zinc-800 group hover:border-zinc-500 shadow-lg transition-all duration-300 ${
+      className={`hidden xl:block fixed bottom-20 right-8 p-3 bg-primary rounded border-2 border-zinc-500 group hover:border-zinc-500 shadow-lg transition-all duration-300 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       aria-label="Scroll to top">
@@ -32,7 +32,7 @@ const ScrollToTop = () => {
         icon="mdi:arrow-up"
         width={24}
         height={24}
-        className="text-zinc-800 group-hover:text-zinc-500 transition-all duration-300"
+        className="text-zinc-500 group-hover:text-zinc-500 transition-all duration-300"
       />
     </button>
   );

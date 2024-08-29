@@ -1,7 +1,7 @@
 import useAnimation from "/utils/hooks/useAnimations";
 import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { CertificationItem } from "./components";
-import { certifications } from "/constants";
+import { CERTIFICATIONS } from "/constants";
 
 const Certifications = () => {
   useAnimation([
@@ -21,7 +21,7 @@ const Certifications = () => {
         </div>
 
         <ItemsWrapper>
-          {certifications.map((cert, index) => (
+          {CERTIFICATIONS.map((cert, index) => (
             <CertificationItem
               key={index}
               {...cert}

@@ -7,7 +7,7 @@ const SkillItem = ({ icon, skill }) => {
     {
       selector: ".skill-item-fade-in",
       from: { opacity: 0, scale: 0.8 },
-      to: { opacity: 1, scale: 1, duration: 1 },
+      to: { opacity: 1, scale: 1, duration: 0.6 },
     },
   ]);
 

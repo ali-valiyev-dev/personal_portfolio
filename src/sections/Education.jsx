@@ -1,4 +1,4 @@
-import { education } from "/constants";
+import { EDUCATION } from "/constants";
 import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { EducationItem } from "./components";
 import useAnimation from "/utils/hooks/useAnimations";
@@ -21,7 +21,7 @@ const Education = () => {
         </div>
 
         <ItemsWrapper>
-          {education.map((edu, index) => (
+          {EDUCATION.map((edu, index) => (
             <EducationItem
               key={index}
               {...edu}

@@ -1,6 +1,6 @@
 import useAnimation from "/utils/hooks/useAnimations";
 import { SocialLink, Headline, ResumeLink, Container } from "../common";
-import { socialLinks } from "/constants";
+import { SOCIAL_LINKS, GENERAL_INFO } from "/constants";
 
 const Hero = () => {
   useAnimation([
@@ -29,15 +29,10 @@ const Hero = () => {
             />
           </div>
 
-          <p className="hero-fade-in text-zinc-500">
-            I&apos;m a Frontend Developer passionate about creating intuitive
-            and visually appealing web experiences. With a focus on detail and a
-            drive to exceed expectations, I&apos;m committed to delivering
-            impactful solutions and staying ahead in emerging technologies.
-          </p>
+          <p className="hero-fade-in text-zinc-500">{GENERAL_INFO.HERO_TEXT}</p>
 
           <div className="hero-fade-in flex gap-6 xl:gap-8">
-            {socialLinks.map((link, index) => (
+            {SOCIAL_LINKS.map((link, index) => (
               <SocialLink
                 key={index}
                 {...link}

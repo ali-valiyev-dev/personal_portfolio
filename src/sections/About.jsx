@@ -1,5 +1,7 @@
 import useAnimation from "/utils/hooks/useAnimations";
 import { Container, SectionTitle } from "../common";
+import { GENERAL_INFO } from "/constants";
+import DOMPurify from "dompurify";
 
 const About = () => {
   useAnimation([
@@ -7,6 +9,8 @@ const About = () => {
       selector: ".about-fade-in",
     },
   ]);
+
+  const sanitizedContent = DOMPurify.sanitize(GENERAL_INFO.ABOUT_ME_TEXT);
 
   return (
     <Container
@@ -27,21 +31,10 @@ const About = () => {
             <SectionTitle title="About Me" />
           </div>
 
-          <p className="about-fade-in text-zinc-500 text-base">
-            I&apos;m a passionate, self-proclaimed designer who specializes in
-            full stack development (React.js & Node.js). I am very enthusiastic
-            about bringing the technical and visual aspects of digital products
-            to life. User experience, pixel-perfect design, and writing clear,
-            readable, highly performant code matter to me.
-            <br />
-            <br />I began my journey as a web developer in 2015, and since then,
-            I&apos;ve continued to grow and evolve as a developer, taking on new
-            challenges and learning the latest technologies along the way. Now,
-            in my early thirties, 7 years after starting my web development
-            journey, I&apos;m building cutting-edge web applications using
-            modern technologies such as Next.js, TypeScript, Nest.js, Tailwind
-            CSS, Supabase, and much more.
-          </p>
+          <p
+            className="about-fade-in text-zinc-500 text-lg"
+            dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+          />
         </article>
       </div>
     </Container>

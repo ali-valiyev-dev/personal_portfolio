@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Logo } from "../common";
-import { navLinks } from "/constants";
+import { NAV_LINKS } from "/constants";
 import { MobileNavbar, NavLink, NavLinksWrapper } from "./components";
 
 const Navbar = () => {
@@ -13,7 +13,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex">
           <NavLinksWrapper>
-            {navLinks.map((link, index) => (
+            {NAV_LINKS.map((link, index) => (
               <NavLink
                 key={index}
                 {...link}

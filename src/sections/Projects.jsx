@@ -1,7 +1,7 @@
 import useAnimation from "/utils/hooks/useAnimations";
 import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { ProjectItem } from "./components";
-import { projects } from "/constants";
+import { PROJECTS } from "/constants";
 
 const Projects = () => {
   useAnimation([
@@ -21,7 +21,7 @@ const Projects = () => {
         </div>
 
         <ItemsWrapper>
-          {projects.map(project => (
+          {PROJECTS.map(project => (
             <ProjectItem
               key={project.id}
               {...project}

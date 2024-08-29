@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import PropTypes from "prop-types";
-import { navLinks, socialLinks } from "/constants";
+import { NAV_LINKS, SOCIAL_LINKS } from "/constants";
 import { Logo, ResumeLink, SocialLink } from "../../common";
 import { NavLinksWrapper, NavLink } from "../components";
 
@@ -51,7 +51,7 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
         </div>
 
         <NavLinksWrapper>
-          {navLinks.map((link, index) => (
+          {NAV_LINKS.map((link, index) => (
             <NavLink
               key={index}
               setIsOpen={setIsOpen}
@@ -61,7 +61,7 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
         </NavLinksWrapper>
 
         <div className="absolute bottom-0 left-0 flex justify-center w-full gap-6 py-4">
-          {socialLinks.map((link, index) => (
+          {SOCIAL_LINKS.map((link, index) => (
             <SocialLink
               key={index}
               {...link}

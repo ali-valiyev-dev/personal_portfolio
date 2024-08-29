@@ -1,7 +1,7 @@
 import useAnimation from "/utils/hooks/useAnimations";
 import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { ExperienceItem } from "./components";
-import { experiences } from "/constants";
+import { EXPERIENCES } from "/constants";
 
 const Experience = () => {
   useAnimation([
@@ -21,7 +21,7 @@ const Experience = () => {
         </div>
 
         <ItemsWrapper>
-          {experiences.map((experience, index) => (
+          {EXPERIENCES.map((experience, index) => (
             <ExperienceItem
               key={index}
               {...experience}
