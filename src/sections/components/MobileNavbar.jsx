@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import PropTypes from "prop-types";
 import { NAV_LINKS, SOCIAL_LINKS } from "/constants";
 import { Logo, ResumeLink, SocialLink } from "../../common";
 import { NavLinksWrapper, NavLink } from "../components";
 
-const MobileNavbar = ({ isOpen, setIsOpen }) => {
+const MobileNavbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -73,11 +73,6 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
       </div>
     </div>
   );
-};
-
-MobileNavbar.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  setIsOpen: PropTypes.func.isRequired,
 };
 
 export default MobileNavbar;
