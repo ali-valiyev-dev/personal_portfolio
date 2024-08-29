@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="mx-auto max-w-screen-2xl flex items-center justify-between px-4 md:px-10 py-4 xl:px-28 text-primary-black">
+      <div className="bg-primary-white mx-auto max-w-screen-2xl flex items-center justify-between px-4 md:px-10 py-2 lg:py-4 xl:px-28 text-primary-black max-lg:fixed z-50 w-full transition-colors duration-300">
         <Logo />
 
         <div className="hidden lg:flex">
