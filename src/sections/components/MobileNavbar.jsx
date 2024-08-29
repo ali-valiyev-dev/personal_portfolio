@@ -32,8 +32,8 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
       </button>
 
       <div
-        className={`bg-primary-white fixed left-0 top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden transition-max-height duration-500 ease-in-out z-50 ${
-          isOpen ? "max-h-screen border-b border-primary-black" : "max-h-0"
+        className={`bg-primary-white fixed left-0 top-0 h-screen w-full flex flex-col items-center justify-center transition-max-height duration-500 ease-in-out z-50 ${
+          isOpen ? "max-h-full border-b border-primary-black" : "max-h-0"
         }`}>
         <div className="flex items-center justify-between py-4 px-4 md:px-10 absolute top-0 left-0 w-full ">
           <Logo />
