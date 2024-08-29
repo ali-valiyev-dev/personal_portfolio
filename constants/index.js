@@ -77,7 +77,7 @@ export const EXPERIENCES = [
     position: "Intern Software Engineer at Atl Tech",
     workPeriod: "Feb 2024 - May 2024",
     description:
-      "As an Intern Software Engineer at Atl, I have contributed to developing scalable web applications while collaborating with senior engineers. My role involves writing clean, efficient code, debugging issues, and learning industry best practices to support ongoing projects ",
+      "As an Intern Software Engineer at Atl, I have Collaborated closely with senior developers and designers to grasp project requirements and objectives. I contributed to the web application for AzerEnergy JSC, working on various features and functionalities. My role involved writing clean, efficient, and maintainable code",
     techStack: [
       {
         icon: "mdi:vuejs",
@@ -214,24 +214,6 @@ export const CERTIFICATIONS = [
     ],
   },
   {
-    icon: "simple-icons:udemy",
-    date: "Feb 2023",
-    title: "The Complete JavaScript Course 2023 by Jonas Schmedtmann",
-    link: "https://www.udemy.com/certificate/UC-a6c7edb5-6b85-46f8-944d-16494df0020e",
-    description:
-      "Enhanced JavaScript expertise by mastering ES6+ features, modern object-oriented programming, and asynchronous coding patterns. Gained a deep understanding of JavaScript internals and honed problem-solving skills through 50+ coding challenges, while utilizing essential tools like NPM, Parcel, and Babel for efficient development workflows.",
-    details: [
-      {
-        icon: "solar:clock-circle-outline",
-        text: "69 hours",
-      },
-      {
-        icon: "solar:medal-ribbons-star-outline",
-        text: "Bestseller",
-      },
-    ],
-  },
-  {
     icon: "simple-icons:coursera",
     date: "May 2023",
     title: "Advanced React Course by Meta",
@@ -249,6 +231,24 @@ export const CERTIFICATIONS = [
       },
     ],
   },
+  {
+    icon: "simple-icons:udemy",
+    date: "Feb 2023",
+    title: "The Complete JavaScript Course 2023 by Jonas Schmedtmann",
+    link: "https://www.udemy.com/certificate/UC-a6c7edb5-6b85-46f8-944d-16494df0020e",
+    description:
+      "Enhanced JavaScript expertise by mastering ES6+ features, modern object-oriented programming, and asynchronous coding patterns. Gained a deep understanding of JavaScript internals and honed problem-solving skills through 50+ coding challenges, while utilizing essential tools like NPM, Parcel, and Babel for efficient development workflows.",
+    details: [
+      {
+        icon: "solar:clock-circle-outline",
+        text: "69 hours",
+      },
+      {
+        icon: "solar:medal-ribbons-star-outline",
+        text: "Bestseller",
+      },
+    ],
+  },
 ];
 
 export const GENERAL_INFO = {
@@ -262,5 +262,5 @@ export const GENERAL_INFO = {
   CONTACTS_TEXT: `Looking for a frontend developer to elevate your team? Let’s connect and explore how I can deliver innovative, high-quality web solutions for your projects.`,
   EMAIL: "ali.valiyev.dev@gmail.com",
   PHONE: "+994708452035",
-  RESUME_LINK: "#",
+  RESUME_LINK: "../public/Ali_Valiyev_Resume.pdf",
 };
