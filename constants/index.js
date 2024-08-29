@@ -262,5 +262,6 @@ export const GENERAL_INFO = {
   CONTACTS_TEXT: `Looking for a frontend developer to elevate your team? Let’s connect and explore how I can deliver innovative, high-quality web solutions for your projects.`,
   EMAIL: "ali.valiyev.dev@gmail.com",
   PHONE: "+994708452035",
-  RESUME_LINK: "../src/assets/Ali_Valiyev_Resume.pdf",
+  RESUME_LINK:
+    "https://app.enhancv.com/share/e391e6bd/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic",
 };
