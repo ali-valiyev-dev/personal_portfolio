@@ -41,16 +41,16 @@ export const SKILLS = [
     icon: "simple-icons:vuetify",
   },
   {
+    skill: "Material-UI",
+    icon: "simple-icons:mui",
+  },
+  {
     skill: "Tailwindcss",
     icon: "simple-icons:tailwindcss",
   },
   {
     skill: "Sass/Scss",
     icon: "simple-icons:sass",
-  },
-  {
-    skill: "Material-UI",
-    icon: "simple-icons:mui",
   },
   {
     skill: "Supabase",
@@ -74,10 +74,10 @@ export const EXPERIENCES = [
   {
     companyLogo: "/atl-logo-light.svg",
     companyName: "Atl Tech",
-    position: "Intern Software Engineer at Atl Tech",
+    position: "Intern Software Engineer (Frontend Developer) at Atl Tech",
     workPeriod: "Feb 2024 - May 2024",
     description:
-      "As an Intern Software Engineer at Atl, I have Collaborated closely with senior developers and designers to grasp project requirements and objectives. I contributed to the web application for AzerEnergy JSC, working on various features and functionalities. My role involved writing clean, efficient, and maintainable code",
+      "Collaborated with senior developers and designers to develop a Vue.js, TypeScript, TailwindCSS, and Vuetify-based web application for AzerEnergy JSC, assisting in implementing features, enhancing performance, and improving responsiveness and user experience.",
     techStack: [
       {
         icon: "mdi:vuejs",
@@ -109,6 +109,22 @@ export const EXPERIENCES = [
       },
     ],
   },
+  {
+    companyLogo: "/improtex_logo.svg",
+    companyName: "Improtex Trucks & Buses LLC",
+    position: "Jr. Procurement Specialist at Improtex Trucks & Buses",
+    workPeriod: "Aug 2021 - Nov 2022",
+    description:
+      "Managed spare parts orders, negotiated with manufacturers for optimal supply terms, and prepared comprehensive reports on supplier base, delivery, and performance metrics.",
+  },
+  {
+    companyLogo: "/general_supply_logo.png",
+    companyName: "General Supply",
+    position: "Jr. Cost Control Specialist at General Supply",
+    workPeriod: "Aug 2021 - Nov 2022",
+    description:
+      "Collaborated with all departments to maximize profitability, assessed incoming products and services for cost efficiency, and analyzed invoices to ensure accurate pricing and proper allocation.",
+  },
 ];
 
 export const EDUCATION = [
@@ -127,7 +143,7 @@ export const EDUCATION = [
 export const PROJECTS = [
   {
     id: 1,
-    image: "/portfolio_website_cover.png",
+    image: "/caffina_cover.png",
     title: "Caffina (Coffee Shop)",
     description:
       "A visually appealing cafe website showcasing a modern, responsive design. Built with React.js for a dynamic, component-based structure and styled using TailwindCSS for a clean, elegant look. Features interactive animations with GSAP and optimized performance with Vite.",
@@ -154,7 +170,7 @@ export const PROJECTS = [
   },
   {
     id: 2,
-    image: "/portfolio_website_cover.png",
+    image: "/portfolio_cover.png",
     title: "Portfolio Website",
     description:
       "Designed to showcase my work, this portfolio features a sleek, responsive layout with dynamic GSAP animations. Built with React.js for a modern, component-based structure and styled with TailwindCSS for a clean, efficient design.",

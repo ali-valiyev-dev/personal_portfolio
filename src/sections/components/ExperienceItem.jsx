@@ -24,8 +24,8 @@ const ExperienceItem = ({
             <img
               src={companyLogo}
               alt={`${companyName} logo`}
-              width={56}
-              height={56}
+              height={50}
+              width={100}
             />
 
             <span className="flex text-nowrap md:hidden">{workPeriod} </span>
@@ -39,7 +39,7 @@ const ExperienceItem = ({
       </p>
 
       <div className="flex gap-2 flex-wrap mt-7 ">
-        {techStack.map(({ icon, name }, index) => (
+        {techStack?.map(({ icon, name }, index) => (
           <div
             key={index}
             className="experience-item-fade-in w-max flex gap-1 items-center border border-zinc-500 text-zinc-400 rounded px-3 py-2">
@@ -68,7 +68,7 @@ ExperienceItem.propTypes = {
       icon: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
     })
-  ).isRequired,
+  ),
 };
 
 export default ExperienceItem;
