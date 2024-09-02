@@ -1,5 +1,5 @@
 import useAnimation from "/utils/hooks/useAnimations";
-import { Container, ItemsWrapper, SectionTitle, SeeMore } from "../common";
+import { Container, SectionTitle, SeeMore } from "../common";
 import { ExperienceItem } from "./components";
 import { EXPERIENCES } from "/constants";
 
@@ -20,16 +20,14 @@ const Experience = () => {
           <SectionTitle title="My Experience" />
         </div>
 
-        <ItemsWrapper>
-          <SeeMore initialCount={1}>
-            {EXPERIENCES.map((experience, index) => (
-              <ExperienceItem
-                key={index}
-                {...experience}
-              />
-            ))}
-          </SeeMore>
-        </ItemsWrapper>
+        <SeeMore>
+          {EXPERIENCES.map((experience, index) => (
+            <ExperienceItem
+              key={index}
+              {...experience}
+            />
+          ))}
+        </SeeMore>
       </div>
     </Container>
   );

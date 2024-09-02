@@ -13,6 +13,10 @@ body {
   text-primary-white;
 }
 
+.ReactCollapse--collapse {
+  transition: height 0.5s ease;
+}
+
 .borders {
   border: 1px solid rebeccapurple;
 }

@@ -34,25 +34,26 @@ const ExperienceItem = ({
         </div>
         <span className="hidden md:flex text-nowrap">{workPeriod}</span>
       </div>
-      <p className="experience-item-fade-in mt-7 text-zinc-400">
+      <p className="experience-item-fade-in pt-7 text-zinc-400">
         {description}
       </p>
-
-      <div className="flex gap-2 flex-wrap mt-7">
-        {techStack?.map(({ icon, name }, index) => (
-          <div
-            key={index}
-            className="experience-item-fade-in w-max flex gap-1 items-center border border-zinc-500 text-zinc-400 rounded px-3 py-2">
-            <Icon
-              icon={icon}
-              width="24"
-              height="24"
-              className="text-zinc-300"
-            />
-            <span>{name}</span>
-          </div>
-        ))}
-      </div>
+      {techStack && (
+        <div className="flex gap-2 flex-wrap pt-7">
+          {techStack?.map(({ icon, name }, index) => (
+            <div
+              key={index}
+              className="experience-item-fade-in w-max h-max flex gap-1 items-center border border-zinc-500 text-zinc-400 rounded px-3 py-2">
+              <Icon
+                icon={icon}
+                width="24"
+                height="24"
+                className="text-zinc-300"
+              />
+              <span>{name}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
