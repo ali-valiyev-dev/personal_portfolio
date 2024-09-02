@@ -17,7 +17,7 @@ const CertificationItem = ({
   ]);
 
   return (
-    <div className="cert-item-fade-in text-primary-white w-full rounded-xl border border-zinc-800 px-3 sm:px-6 py-4 sm:py-7">
+    <div className="cert-item-fade-in text-primary-white w-full rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
       <div className="cert-item-fade-in flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row gap-7 h-max md:items-center">
           <div className="flex items-center justify-between">
