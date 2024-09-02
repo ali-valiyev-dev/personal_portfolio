@@ -28,6 +28,7 @@ const SeeMore = ({ children, initialCount }) => {
   return (
     <div className="relative">
       <div
+        className="flex flex-col gap-5 xl:gap-8"
         ref={contentRef}
         style={{
           height: contentHeight,
