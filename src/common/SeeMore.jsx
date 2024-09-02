@@ -39,7 +39,7 @@ const SeeMore = ({ children, initialCount }) => {
       </div>
       {initialCount < childrenArray.length && (
         <button
-          className="absolute left-1/2 transform -translate-x-1/2 -bottom-4 px-4 py-1 bg-primary-black border border-zinc-800 hover:border-zinc-500 transition-colors duration-300 text-zinc-300 rounded-2xl"
+          className="absolute left-1/2 transform -translate-x-1/2 -bottom-4 px-4 py-1 text-nowrap bg-primary-black border border-zinc-800 hover:border-zinc-500 transition-colors duration-300 text-zinc-300 rounded-2xl"
           onClick={handleToggle}>
           {showAll ? "See Less" : "See All Experiences"}
         </button>
@@ -50,11 +50,7 @@ const SeeMore = ({ children, initialCount }) => {
 
 SeeMore.propTypes = {
   children: PropTypes.node.isRequired,
-  initialCount: PropTypes.number,
-};
-
-SeeMore.defaultProps = {
-  initialCount: 2,
+  initialCount: PropTypes.number.isRequired,
 };
 
 export default SeeMore;

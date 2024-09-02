@@ -1,5 +1,6 @@
 import SocialLink from "./SocialLink";
-import Headline from "./Headline";
+import HeroHeadline from "./HeroHeadline";
+import ContactsHeadline from "./ContactsHeadline";
 import SectionTitle from "./SectionTitle";
 import ResumeLink from "./ResumeLink";
 import Logo from "./Logo";
@@ -12,7 +13,8 @@ import SeeMore from "./SeeMore";
 
 export {
   SocialLink,
-  Headline,
+  HeroHeadline,
+  ContactsHeadline,
   SectionTitle,
   Logo,
   ResumeLink,

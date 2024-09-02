@@ -1,7 +1,7 @@
 import useAnimation from "/utils/hooks/useAnimations";
 import {
   SocialLink,
-  Headline,
+  ContactsHeadline,
   ResumeLink,
   Container,
   ScrollToTopMobile,
@@ -22,7 +22,11 @@ const Contacts = () => {
       textColor="text-primary-black">
       <div className="flex flex-col xl:flex-row gap-8 xl:gap-16">
         <div className="contacts-fade-in w-full xl:w-1/2">
-          <Headline text={[`Let's`, "Talk for", "Something", "Special"]} />
+          <div className="flex justify-between items-start">
+            <ContactsHeadline />
+            <ScrollToTopMobile />
+          </div>
+
           <p className="contacts-fade-in mt-5 text-zinc-500 max-w-[600px]">
             {GENERAL_INFO.CONTACTS_TEXT}
           </p>
@@ -43,7 +47,7 @@ const Contacts = () => {
             </a>
           </div>
 
-          <div className="contacts-fade-in flex gap-6">
+          <div className="contacts-fade-in flex flex-wrap gap-2 sm:gap-6">
             {SOCIAL_LINKS.map((link, index) => (
               <SocialLink
                 key={index}
@@ -51,8 +55,6 @@ const Contacts = () => {
               />
             ))}
             <ResumeLink />
-
-            <ScrollToTopMobile />
           </div>
         </div>
       </div>

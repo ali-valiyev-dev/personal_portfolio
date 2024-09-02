@@ -17,7 +17,7 @@ const CertificationItem = ({
   ]);
 
   return (
-    <div className="cert-item-fade-in text-primary-white w-full rounded-xl border border-zinc-800 px-6 py-7">
+    <div className="cert-item-fade-in text-primary-white w-full rounded-xl border border-zinc-800 px-3 sm:px-6 py-4 sm:py-7">
       <div className="cert-item-fade-in flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row gap-7 h-max md:items-center">
           <div className="flex items-center justify-between">
@@ -36,11 +36,11 @@ const CertificationItem = ({
       <p className="cert-item-fade-in mt-7 text-zinc-400">{description}</p>
 
       <div className="cert-item-fade-in flex items-center justify-between  mt-7">
-        <div className="flex items-center gap-5 text-zinc-400">
+        <div className="flex items-center gap-2 sm:gap-5 text-zinc-400">
           {details.map(({ icon, text }, index) => (
             <div
               key={index}
-              className="flex items-center gap-1">
+              className="flex flex-wrap justify-center items-center gap-1">
               <Icon
                 icon={icon}
                 width={24}
@@ -54,8 +54,8 @@ const CertificationItem = ({
         <a
           href={link}
           target="_blank"
-          className="flex items-center gap-1 text-base hover:underline text-zinc-300 hover:text-zinc-400 transition-all duration-300">
-          See More{" "}
+          className="flex justify-center items-center gap-1 text-base text-nowrap hover:underline text-zinc-300 hover:text-zinc-400 transition-all duration-300">
+          More{" "}
           <Icon
             icon="quill:link-out"
             width={16}

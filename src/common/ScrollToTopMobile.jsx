@@ -6,7 +6,7 @@ const ScrollToTopMobile = () => {
     <button
       type="button"
       onClick={scrollToTop}
-      className="ml-auto block xl:hidden p-3 bg-primary rounded border-2 border-zinc-800 shadow-lg"
+      className="xl:hidden p-3 bg-primary rounded border-2 border-zinc-800 shadow-lg"
       aria-label="Scroll to top">
       <Icon
         icon="mdi:arrow-up"

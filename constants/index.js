@@ -37,16 +37,16 @@ export const SKILLS = [
     icon: "simple-icons:vuedotjs",
   },
   {
+    skill: "Tailwindcss",
+    icon: "simple-icons:tailwindcss",
+  },
+  {
     skill: "Vuetify",
     icon: "simple-icons:vuetify",
   },
   {
     skill: "Material-UI",
     icon: "simple-icons:mui",
-  },
-  {
-    skill: "Tailwindcss",
-    icon: "simple-icons:tailwindcss",
   },
   {
     skill: "Sass/Scss",
@@ -98,10 +98,6 @@ export const EXPERIENCES = [
       {
         icon: "simple-icons:vuetify",
         name: "Vuetify",
-      },
-      {
-        icon: "simple-icons:bem",
-        name: "BEM",
       },
       {
         icon: "simple-icons:jira",
@@ -162,10 +158,6 @@ export const PROJECTS = [
         icon: "cib:greensock",
         name: "GSAP",
       },
-      {
-        icon: "simple-icons:vite",
-        name: "Vite",
-      },
     ],
   },
   {
@@ -189,10 +181,6 @@ export const PROJECTS = [
         icon: "cib:greensock",
         name: "GSAP",
       },
-      {
-        icon: "simple-icons:vite",
-        name: "Vite",
-      },
     ],
   },
 ];
@@ -207,6 +195,11 @@ export const SOCIAL_LINKS = [
     href: "https://github.com/ali-valiyev-dev",
     icon: "simple-icons:github",
     alt: "GitHub",
+  },
+  {
+    href: "https://www.coursera.org/user/61874ad3b8bc9170e20ecc6a46609b2e",
+    icon: "simple-icons:coursera",
+    alt: "Coursera",
   },
 ];
 

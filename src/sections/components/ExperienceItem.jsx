@@ -17,7 +17,7 @@ const ExperienceItem = ({
   ]);
 
   return (
-    <div className="experience-item-fade-in text-zinc-300 rounded-xl border border-zinc-800 px-6 py-7">
+    <div className="experience-item-fade-in text-zinc-300 rounded-xl border border-zinc-800 px-2 sm:px-6 py-7">
       <div className="experience-item-fade-in relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
@@ -38,7 +38,7 @@ const ExperienceItem = ({
         {description}
       </p>
 
-      <div className="flex gap-2 flex-wrap mt-7 ">
+      <div className="flex gap-2 flex-wrap mt-7">
         {techStack?.map(({ icon, name }, index) => (
           <div
             key={index}

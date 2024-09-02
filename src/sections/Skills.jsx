@@ -21,7 +21,7 @@ const Skills = () => {
         </div>
         <div
           className="flex flex-wrap justify-center lg:py-10
-        gap-5 lg:gap-10 xl:gap-x-[70px]">
+        gap-6 lg:gap-10 xl:gap-x-[70px]">
           {SKILLS.map((skill, index) => (
             <SkillItem
               key={index}

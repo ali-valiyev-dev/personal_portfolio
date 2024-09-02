@@ -60,7 +60,7 @@ const MobileNavbar = () => {
           ))}
         </NavLinksWrapper>
 
-        <div className="absolute bottom-0 left-0 flex justify-center w-full gap-6 py-4">
+        <div className="absolute bottom-0 left-0 flex flex-wrap justify-center w-full gap-2 sm:gap-6 py-4 px-4">
           {SOCIAL_LINKS.map((link, index) => (
             <SocialLink
               key={index}
