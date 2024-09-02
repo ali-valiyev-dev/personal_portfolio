@@ -77,7 +77,7 @@ export const EXPERIENCES = [
     position: "Intern Software Engineer (Frontend Developer) at Atl Tech",
     workPeriod: "Feb 2024 - May 2024",
     description:
-      "Collaborated with senior developers and designers to develop a Vue.js, TypeScript, TailwindCSS, and Vuetify-based web application for AzerEnergy JSC, assisting in implementing features, enhancing performance, and improving responsiveness and user experience.",
+      "Collaborated with senior developers to create a Vue.js, TypeScript, TailwindCSS, and Vuetify-based web application for AzerEnergy JSC, Ensuring high code quality through best practices, and implementing CRUD operations.",
     techStack: [
       {
         icon: "mdi:vuejs",
@@ -117,16 +117,16 @@ export const EXPERIENCES = [
     companyLogo: "/general_supply_logo.png",
     companyName: "General Supply",
     position: "Jr. Cost Control Specialist at General Supply",
-    workPeriod: "Aug 2021 - Nov 2022",
+    workPeriod: "Apr 2021 - Jun 2021",
     description:
-      "Collaborated with all departments to maximize profitability, assessed incoming products and services for cost efficiency, and analyzed invoices to ensure accurate pricing and proper allocation.",
+      "Collaborated with departments to boost profitability, evaluated product and service costs, and analyzed invoices for accurate pricing and allocation.",
   },
 ];
 
 export const EDUCATION = [
   {
     universityLogo: "/khazar_university_logo.png",
-    university: "Atl Tech",
+    university: "Khazar University",
     major: "BSc in Business Management at Khazar University",
     studyYears: "Sep 2016 - Jan 2022",
     description:
@@ -142,7 +142,7 @@ export const PROJECTS = [
     image: "/caffina_cover.png",
     title: "Caffina (Coffee Shop)",
     description:
-      "A visually appealing cafe website showcasing a modern, responsive design. Built with React.js for a dynamic, component-based structure and styled using TailwindCSS for a clean, elegant look. Features interactive animations with GSAP and optimized performance with Vite.",
+      "A visually appealing cafe website showcasing a modern, responsive design. Built with React.js for a dynamic, component-based structure and styled using TailwindCSS for a clean, elegant look. Features interactive animations with GSAP.",
     previewLink: "https://caffina-cafe.netlify.app",
     repoLink: "https://github.com/ali-valiyev-dev/caffina",
     tech: [
@@ -165,7 +165,7 @@ export const PROJECTS = [
     image: "/portfolio_cover.png",
     title: "Portfolio Website",
     description:
-      "Designed to showcase my work, this portfolio features a sleek, responsive layout with dynamic GSAP animations. Built with React.js for a modern, component-based structure and styled with TailwindCSS for a clean, efficient design.",
+      "Developed to showcase my work, this portfolio features responsive layout with dynamic GSAP animations. Built with React.js for a modern, component-based structure and styled with TailwindCSS for a clean, efficient design.",
     previewLink: "https://ali-personal-portfolio.netlify.app",
     repoLink: "https://github.com/ali-valiyev-dev/personal_portfolio",
     tech: [
@@ -263,10 +263,10 @@ export const CERTIFICATIONS = [
 export const GENERAL_INFO = {
   HERO_TEXT: `I'm a Frontend Developer passionate about creating intuitive and visually appealing web experiences. With a keen focus on detail and a drive to exceed expectations, I am committed to delivering impactful solutions and staying ahead of emerging technologies.`,
 
-  ABOUT_ME_TEXT: `I’m a passionate, self-taught frontend developer specializing in React.js and Next.js. My enthusiasm lies in bringing the technical and visual aspects of digital products to life. I prioritize user experience, pixel-perfect design, and writing clean, readable, and highly performant code.
+  ABOUT_ME_TEXT: `I’m a passionate, self-taught frontend developer specializing in React.js and Tailwind CSS. My enthusiasm lies in bringing the technical and visual aspects of digital products to life. I prioritize user experience, pixel-perfect design, and writing clean, readable, and highly performant code.
   <br/>
   <br/>
-  I began my journey as a web developer in 2022 and have continually evolved, embracing new challenges and mastering the latest technologies. Now, two years later, I’m building cutting-edge web applications using modern tools like Next.js, TypeScript, Tailwind CSS, Supabase, and more.`,
+  I began my journey as a web developer in 2023 and have continually evolved, embracing new challenges and mastering the latest technologies. Now, I’m building cutting-edge web applications using modern tools like Next.js, TypeScript, Tailwind CSS, Supabase, and more.`,
 
   CONTACTS_TEXT: `Looking for a frontend developer to elevate your team? Let’s connect and explore how I can deliver innovative, high-quality web solutions for your projects.`,
   EMAIL: "ali.valiyev.dev@gmail.com",
