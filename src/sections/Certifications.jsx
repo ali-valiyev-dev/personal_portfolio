@@ -4,11 +4,7 @@ import { CertificationItem } from "./components";
 import { CERTIFICATIONS } from "/constants";
 
 const Certifications = () => {
-  useAnimation([
-    {
-      selector: ".certs-fade-in",
-    },
-  ]);
+  useAnimation([".certs-title-fade-in"]);
 
   return (
     <Container
@@ -16,7 +12,7 @@ const Certifications = () => {
       bgColor="bg-primary-black"
       textColor="text-primary-white">
       <div className="flex flex-col gap-5 xl:px-6">
-        <div className="certs-fade-in">
+        <div className="certs-title-fade-in">
           <SectionTitle title="My Certifications" />
         </div>
 

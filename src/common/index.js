@@ -10,6 +10,7 @@ import ScrollToTop from "./ScrollToTop";
 import ScrollToTopMobile from "./ScrollToTopMobile";
 import Spinner from "./Spinner";
 import SeeMore from "./SeeMore";
+import TechItem from "./TechItem";
 
 export {
   SocialLink,
@@ -24,4 +25,5 @@ export {
   ScrollToTopMobile,
   Spinner,
   SeeMore,
+  TechItem,
 };

@@ -10,14 +10,15 @@ const EducationItem = ({
   relevantCoursework,
 }) => {
   useAnimation([
-    {
-      selector: ".education-item-fade-in",
-    },
+    ".edu-item-fade-in",
+    ".edu-header-fade-in",
+    ".edu-desc-fade-in",
+    ".edu-details-fade-in",
   ]);
 
   return (
-    <div className="education-item-fade-in rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
-      <div className="education-item-fade-in relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
+    <div className="edu-item-fade-in rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
+      <div className="edu-header-fade-in relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
             <img
@@ -35,8 +36,9 @@ const EducationItem = ({
           {studyYears}
         </span>
       </div>
-      <p className="education-item-fade-in mt-7 text-zinc-400">{description}</p>
-      <p className="education-item-fade-in mt-7 text-zinc-400">
+
+      <p className="edu-desc-fade-in mt-7 text-zinc-400">{description}</p>
+      <p className="edu-details-fade-in mt-7 text-zinc-400">
         <span className="font-semibold text-zinc-300">
           Relevant Coursework:
         </span>{" "}

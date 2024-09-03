@@ -4,9 +4,11 @@ import { SOCIAL_LINKS, GENERAL_INFO } from "/constants";
 
 const Hero = () => {
   useAnimation([
-    {
-      selector: ".hero-fade-in",
-    },
+    ".hero-fade-in",
+    ".hero-headline-fade-in",
+    ".hero-text-fade-in",
+    ".hero-socials-fade-in",
+    ".hero-img-fade-in",
   ]);
 
   return (
@@ -16,13 +18,15 @@ const Hero = () => {
       textColor="text-primary-black">
       <div className="flex flex-col-reverse gap-12 lg:gap-0 lg:flex-row">
         <div className="lg:w-1/2 flex flex-col justify-end gap-10">
-          <div className="hero-fade-in">
+          <div className="hero-headline-fade-in">
             <HeroHeadline />
           </div>
 
-          <p className="hero-fade-in text-zinc-500">{GENERAL_INFO.HERO_TEXT}</p>
+          <p className="hero-text-fade-in text-zinc-500">
+            {GENERAL_INFO.HERO_TEXT}
+          </p>
 
-          <div className="hero-fade-in flex flex-wrap gap-2 sm:gap-6">
+          <div className="hero-socials-fade-in flex flex-wrap gap-2 sm:gap-6">
             {SOCIAL_LINKS.map((link, index) => (
               <SocialLink
                 key={index}
@@ -33,7 +37,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero-fade-in lg:w-1/2 flex justify-center lg:mb-7">
+        <div className="hero-img-fade-in lg:w-1/2 flex justify-center lg:mb-7">
           <img
             src="/hero.png"
             alt="Hero"

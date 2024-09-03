@@ -3,13 +3,7 @@ import { Icon } from "@iconify/react";
 import useAnimation from "/utils/hooks/useAnimations.js";
 
 const SkillItem = ({ icon, skill }) => {
-  useAnimation([
-    {
-      selector: ".skill-item-fade-in",
-      from: { opacity: 0, scale: 0.8 },
-      to: { opacity: 1, scale: 1, duration: 0.6 },
-    },
-  ]);
+  useAnimation([".skill-item-fade-in"]);
 
   return (
     <div className="skill-item-fade-in group w-36 lg:w-[186px] flex flex-col items-center justify-center gap-6 sm:gap-8 py-5 lg:py-9 rounded border-2 border-primary-black bg-primary-white hover:bg-primary-black transition-colors duration-300 ease-in-out">

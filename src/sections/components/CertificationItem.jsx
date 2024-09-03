@@ -11,14 +11,15 @@ const CertificationItem = ({
   details,
 }) => {
   useAnimation([
-    {
-      selector: ".cert-item-fade-in",
-    },
+    ".cert-item-fade-in",
+    ".cert-header-fade-in",
+    ".cert-desc-fade-in",
+    ".cert-details-fade-in",
   ]);
 
   return (
     <div className="cert-item-fade-in text-primary-white w-full rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
-      <div className="cert-item-fade-in flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
+      <div className="cert-header-fade-in flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row gap-7 h-max md:items-center">
           <div className="flex items-center justify-between">
             <Icon
@@ -33,9 +34,9 @@ const CertificationItem = ({
         <span className="hidden md:flex text-nowrap">{date}</span>
       </div>
 
-      <p className="cert-item-fade-in mt-7 text-zinc-400">{description}</p>
+      <p className="cert-desc-fade-in mt-7 text-zinc-400">{description}</p>
 
-      <div className="cert-item-fade-in flex items-center justify-between  mt-7">
+      <div className="cert-details-fade-in flex items-center justify-between  mt-7">
         <div className="flex items-center gap-2 sm:gap-5 text-zinc-400">
           {details.map(({ icon, text }, index) => (
             <div

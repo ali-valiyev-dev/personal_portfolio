@@ -4,11 +4,7 @@ import { ProjectItem } from "./components";
 import { PROJECTS } from "/constants";
 
 const Projects = () => {
-  useAnimation([
-    {
-      selector: ".projects-fade-in",
-    },
-  ]);
+  useAnimation([".projects-title-fade-in"]);
 
   return (
     <Container
@@ -16,7 +12,7 @@ const Projects = () => {
       bgColor="bg-primary-black"
       textColor="text-primary-white">
       <div className="flex flex-col gap-5">
-        <div className="projects-fade-in">
+        <div className="projects-title-fade-in">
           <SectionTitle title="My Projects" />
         </div>
 

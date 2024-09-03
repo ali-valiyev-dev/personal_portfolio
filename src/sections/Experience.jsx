@@ -4,11 +4,7 @@ import { ExperienceItem } from "./components";
 import { EXPERIENCES } from "/constants";
 
 const Experience = () => {
-  useAnimation([
-    {
-      selector: ".experience-fade-in",
-    },
-  ]);
+  useAnimation([".exp-title-fade-in"]);
 
   return (
     <Container
@@ -16,7 +12,7 @@ const Experience = () => {
       bgColor="bg-primary-black"
       textColor="text-primary-white">
       <div className="flex flex-col gap-5 xl:px-6">
-        <div className="experience-fade-in">
+        <div className="exp-title-fade-in">
           <SectionTitle title="My Experience" />
         </div>
 

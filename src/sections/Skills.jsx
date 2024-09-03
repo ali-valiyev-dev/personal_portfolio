@@ -4,11 +4,7 @@ import { Container, SectionTitle } from "../common";
 import useAnimation from "/utils/hooks/useAnimations";
 
 const Skills = () => {
-  useAnimation([
-    {
-      selector: ".skills-fade-in",
-    },
-  ]);
+  useAnimation([".skills-title-fade-in"]);
 
   return (
     <Container
@@ -16,7 +12,7 @@ const Skills = () => {
       bgColor="bg-primary-white"
       textColor="text-primary-black">
       <div className="flex flex-col gap-5 items-center">
-        <div className="skills-fade-in ">
+        <div className="skills-title-fade-in ">
           <SectionTitle title="My Skills" />
         </div>
         <div
