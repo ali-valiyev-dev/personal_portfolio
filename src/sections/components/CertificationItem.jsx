@@ -54,7 +54,7 @@ const CertificationItem = ({
           rel="noopener noreferrer"
           className="flex justify-center items-center gap-1 text-base text-nowrap hover:underline text-zinc-300 hover:text-zinc-400 transition-all duration-300"
           aria-label={`View ${title} certification details (opens in a new tab)`}>
-          View {title} Details{" "}
+          More{" "}
           <Icon
             icon="quill:link-out"
             width={16}

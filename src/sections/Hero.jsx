@@ -34,8 +34,8 @@ const Hero = () => {
       id="hero"
       bgColor="bg-primary-white"
       textColor="text-primary-black">
-      <div className="flex flex-col-reverse gap-12 lg:gap-0 lg:flex-row">
-        <div className="lg:w-1/2 flex flex-col justify-end gap-10">
+      <div className="flex pt-20 lg:pt-0">
+        <div className="lg:w-1/2 flex flex-col justify-end gap-12 lg:gap-10">
           <div className="hero-content">
             <HeroHeadline />
           </div>
@@ -44,7 +44,7 @@ const Hero = () => {
             {general_info[0]?.HERO_TEXT}
           </p>
 
-          <div className="hero-content flex flex-wrap gap-2 sm:gap-6">
+          <div className="hero-content flex flex-wrap gap-2 sm:gap-6 mt-20 lg:0">
             {social_links.map(social_link => (
               <SocialLink
                 key={social_link.id}
@@ -55,7 +55,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero-content lg:w-1/2 flex justify-center lg:mb-7">
+        <div className="hero-content hidden lg:flex lg:w-1/2 justify-center lg:mb-7">
           <img
             src="/hero.png"
             alt="Hero"
