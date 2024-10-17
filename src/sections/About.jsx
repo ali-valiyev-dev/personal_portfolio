@@ -2,9 +2,11 @@ import { Container, SectionTitle } from "../common";
 import useFetchData from "../hooks/useFetchData";
 import useAnimate from "../hooks/useAnimate";
 import DOMPurify from "dompurify";
+import useFetchMedia from "../hooks/useFetchMedia";
 
 const About = () => {
   const { data: general_info } = useFetchData("general_info", "ABOUT_ME_TEXT");
+  const { imageSrc } = useFetchMedia("portfolio-images", "me.png");
 
   useAnimate([".anim-about-content"]);
 
@@ -17,11 +19,15 @@ const About = () => {
       textColor="text-primary-black">
       <div className="flex flex-col lg:flex-row gap-5 items-start">
         <figure className="anim-about-content w-full lg:w-1/2 flex items-center justify-center">
-          <img
-            src="/me.png"
-            alt="Portrait of the developer"
-            className="max-w-full h-auto"
-          />
+          {imageSrc ? (
+            <img
+              src={imageSrc}
+              alt="Portrait of the developer"
+              className="max-w-full h-auto"
+            />
+          ) : (
+            <p>Image unavailable</p>
+          )}
         </figure>
 
         <article className="w-full lg:w-1/2 flex flex-col gap-5">

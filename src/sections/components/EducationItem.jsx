@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import useAnimate from "../../hooks/useAnimate";
+import useFetchMedia from "../../hooks/useFetchMedia";
 
 const EducationItem = ({
   universityLogo,
@@ -9,6 +10,8 @@ const EducationItem = ({
   description,
   relevantCoursework,
 }) => {
+  const { imageSrc } = useFetchMedia("portfolio-images", universityLogo);
+
   useAnimate([".edu-item"]);
 
   return (
@@ -16,11 +19,15 @@ const EducationItem = ({
       <div className="edu-item relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
-            <img
-              src={universityLogo}
-              alt={`${university} logo`}
-              className="w-auto h-10"
-            />
+            {imageSrc ? (
+              <img
+                src={imageSrc}
+                alt={`${university} logo`}
+                className="w-auto h-10"
+              />
+            ) : (
+              <p>Image unavailable</p>
+            )}
             <span className="flex text-nowrap md:hidden text-zinc-300">
               {studyYears}
             </span>

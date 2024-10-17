@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { TechItem } from "../../common";
 import useAnimate from "../../hooks/useAnimate";
+import useFetchMedia from "../../hooks/useFetchMedia";
 
 const ExperienceItem = ({
   companyLogo,
@@ -10,6 +11,8 @@ const ExperienceItem = ({
   description,
   techStack,
 }) => {
+  const { imageSrc } = useFetchMedia("portfolio-images", companyLogo);
+
   useAnimate([".exp-item-content"]);
 
   return (
@@ -17,14 +20,17 @@ const ExperienceItem = ({
       <div className="exp-item-content relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
-            <img
-              src={companyLogo}
-              alt={`${companyName} logo`}
-              height={50}
-              width={100}
-            />
-
-            <span className="flex text-nowrap md:hidden">{workPeriod} </span>
+            {imageSrc ? (
+              <img
+                src={imageSrc}
+                alt={`${companyName} logo`}
+                height={50}
+                width={100}
+              />
+            ) : (
+              <p>Image unavailable</p>
+            )}
+            <span className="flex text-nowrap md:hidden">{workPeriod}</span>
           </div>
           <h3 className="text-primary-white text-xl xl:text-2xl">{position}</h3>
         </div>

@@ -3,12 +3,15 @@ import useFetchData from "../hooks/useFetchData";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import useFetchMedia from "../hooks/useFetchMedia";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const { data: social_links } = useFetchData("social_links", "*");
   const { data: general_info } = useFetchData("general_info", "HERO_TEXT");
+
+  const { imageSrc } = useFetchMedia("portfolio-images", "hero.png");
 
   useGSAP(() => {
     gsap.fromTo(
@@ -56,11 +59,15 @@ const Hero = () => {
         </div>
 
         <div className="hero-content hidden lg:flex lg:w-1/2 justify-center lg:mb-7">
-          <img
-            src="/hero.png"
-            alt="Hero"
-            loading="eager"
-          />
+          {imageSrc ? (
+            <img
+              src={imageSrc}
+              alt="Hero"
+              loading="eager"
+            />
+          ) : (
+            <p>Image unavailable</p>
+          )}
         </div>
       </div>
     </Container>

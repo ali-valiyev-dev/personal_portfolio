@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
 import { TechItem } from "../../common";
 import useAnimate from "../../hooks/useAnimate";
+import useFetchMedia from "../../hooks/useFetchMedia";
 
 const ProjectItem = ({
   id,
@@ -12,6 +13,8 @@ const ProjectItem = ({
   previewLink,
   tech,
 }) => {
+  const { imageSrc } = useFetchMedia("portfolio-images", image);
+
   useAnimate([".project-item-content"]);
 
   const reverse = id % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse";
@@ -23,11 +26,15 @@ const ProjectItem = ({
         <a
           target="_blank"
           href={previewLink}>
-          <img
-            src={image}
-            alt={`Project ${id} - ${title}`}
-            className="object-cover"
-          />
+          {imageSrc ? (
+            <img
+              src={imageSrc}
+              alt={`Project ${id} - ${title}`}
+              className="object-cover"
+            />
+          ) : (
+            <p>Image unavailable</p>
+          )}
         </a>
       </figure>
 
