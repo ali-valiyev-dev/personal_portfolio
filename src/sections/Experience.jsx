@@ -1,10 +1,12 @@
-import useAnimation from "/utils/hooks/useAnimations";
 import { Container, SectionTitle, SeeMore } from "../common";
 import { ExperienceItem } from "./components";
-import { EXPERIENCES } from "/constants";
+import useFetchData from "../hooks/useFetchData";
+import useAnimate from "../hooks/useAnimate";
 
 const Experience = () => {
-  useAnimation([".exp-title-fade-in"]);
+  const { data: experience } = useFetchData("experience", "*");
+
+  useAnimate([".exp-title"]);
 
   return (
     <Container
@@ -12,14 +14,14 @@ const Experience = () => {
       bgColor="bg-primary-black"
       textColor="text-primary-white">
       <div className="flex flex-col gap-5 xl:px-6">
-        <div className="exp-title-fade-in">
+        <div className="exp-title">
           <SectionTitle title="My Experience" />
         </div>
 
         <SeeMore>
-          {EXPERIENCES.map((experience, index) => (
+          {experience.map(experience => (
             <ExperienceItem
-              key={index}
+              key={experience.id}
               {...experience}
             />
           ))}

@@ -1,35 +1,11 @@
-import {
-  About,
-  Experience,
-  Contacts,
-  Hero,
-  Navbar,
-  Projects,
-  Skills,
-  Education,
-  Certifications,
-} from "./sections";
+import { ScrollToTop } from "./common";
+import Layout from "./Layout";
 
 function App() {
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
-
-      <main>
-        <Hero />
-        <Skills />
-        <Projects />
-        <About />
-        <Experience />
-        <Education />
-        <Certifications />
-      </main>
-
-      <footer>
-        <Contacts />
-      </footer>
+      <Layout />
+      <ScrollToTop />
     </>
   );
 }

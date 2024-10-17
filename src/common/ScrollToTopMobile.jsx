@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { scrollToTop } from "/utils/helpers";
+import { scrollToTop } from "../utils/helpers";
 
 const ScrollToTopMobile = () => {
   return (

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import useAnimation from "/utils/hooks/useAnimations";
 import { TechItem } from "../../common";
+import useAnimate from "../../hooks/useAnimate";
 
 const ExperienceItem = ({
   companyLogo,
@@ -10,17 +10,11 @@ const ExperienceItem = ({
   description,
   techStack,
 }) => {
-  useAnimation([
-    ".exp-item-fade-in",
-    ".exp-header-fade-in",
-    ".exp-desc-fade-in",
-    ".exp-details-fade-in",
-    ".exp-tech-item-fade-in",
-  ]);
+  useAnimate([".exp-item-content"]);
 
   return (
-    <div className="exp-item-fade-in text-zinc-300 rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
-      <div className="exp-header-fade-in relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
+    <div className="exp-item-content text-zinc-300 rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
+      <div className="exp-item-content relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
             <img
@@ -32,19 +26,19 @@ const ExperienceItem = ({
 
             <span className="flex text-nowrap md:hidden">{workPeriod} </span>
           </div>
-          <h4 className="text-primary-white text-xl xl:text-2xl">{position}</h4>
+          <h3 className="text-primary-white text-xl xl:text-2xl">{position}</h3>
         </div>
         <span className="hidden md:flex text-nowrap">{workPeriod}</span>
       </div>
 
-      <p className="exp-desc-fade-in pt-7 text-zinc-400">{description}</p>
+      <p className="exp-item-content pt-7 text-zinc-400">{description}</p>
 
       {techStack && (
         <div className="flex gap-2 flex-wrap pt-7">
           {techStack?.map((tech, index) => (
             <div
               key={index}
-              className="exp-tech-item-fade-in">
+              className="exp-item-content">
               <TechItem {...tech} />
             </div>
           ))}

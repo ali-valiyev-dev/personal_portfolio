@@ -1,4 +1,3 @@
-import useAnimation from "/utils/hooks/useAnimations";
 import {
   SocialLink,
   ContactsHeadline,
@@ -6,17 +5,18 @@ import {
   Container,
   ScrollToTopMobile,
 } from "../common";
-import { GENERAL_INFO, SOCIAL_LINKS } from "/constants";
+import useFetchData from "../hooks/useFetchData";
+import useAnimate from "../hooks/useAnimate";
 
 const Contacts = () => {
-  useAnimation([
-    ".contacts-title-fade-in",
-    ".contacts-subtitle-fade-in",
-    ".contacts-subtitle-fade-in",
-    ".contacts-mail-fade-in",
-    ".contacts-number-fade-in",
-    ".contacts-socials-fade-in",
-  ]);
+  const { data: general_info } = useFetchData(
+    "general_info",
+    "CONTACTS_TEXT, EMAIL, PHONE"
+  );
+
+  const { data: social_links } = useFetchData("social_links", "*");
+
+  useAnimate([".anim-contacts-content"]);
 
   return (
     <Container
@@ -25,36 +25,36 @@ const Contacts = () => {
       textColor="text-primary-black">
       <div className="flex flex-col xl:flex-row gap-8 xl:gap-16">
         <div className="w-full xl:w-1/2">
-          <div className="contacts-title-fade-in flex justify-between items-start">
+          <div className="anim-contacts-content flex justify-between items-start">
             <ContactsHeadline />
             <ScrollToTopMobile />
           </div>
 
-          <p className="contacts-subtitle-fade-in mt-5 text-zinc-500 max-w-[600px]">
-            {GENERAL_INFO.CONTACTS_TEXT}
+          <p className="anim-contacts-content mt-5 text-zinc-500 max-w-[600px]">
+            {general_info[0]?.CONTACTS_TEXT}
           </p>
         </div>
 
         <div className="w-full xl:w-1/2 flex flex-col gap-7 xl:gap-14">
           <div className="flex flex-col gap-5 text-xl xl:text-2xl font-semibold w-max">
             <a
-              href={`mailto:${GENERAL_INFO.EMAIL}`}
+              href={`mailto:${general_info[0]?.EMAIL}`}
               rel="noopener noreferrer"
-              className="contacts-mail-fade-in hover:underline block">
-              {GENERAL_INFO.EMAIL}
+              className="anim-contacts-content hover:underline block">
+              {general_info[0]?.EMAIL}
             </a>
             <a
-              href={`tel:${GENERAL_INFO.PHONE}`}
-              className="contacts-number-fade-in hover:underline block">
-              {GENERAL_INFO.PHONE}
+              href={`tel:${general_info[0]?.PHONE}`}
+              className="anim-contacts-content hover:underline block">
+              {general_info[0]?.PHONE}
             </a>
           </div>
 
-          <div className="contacts-socials-fade-in flex flex-wrap gap-2 sm:gap-6">
-            {SOCIAL_LINKS.map((link, index) => (
+          <div className="anim-contacts-content flex flex-wrap gap-2 sm:gap-6">
+            {social_links.map(social_link => (
               <SocialLink
-                key={index}
-                {...link}
+                key={social_link.id}
+                {...social_link}
               />
             ))}
             <ResumeLink />

@@ -1,10 +1,12 @@
-import { SKILLS } from "/constants";
 import { SkillItem } from "./components";
 import { Container, SectionTitle } from "../common";
-import useAnimation from "/utils/hooks/useAnimations";
+import useFetchData from "../hooks/useFetchData";
+import useAnimate from "../hooks/useAnimate";
 
 const Skills = () => {
-  useAnimation([".skills-title-fade-in"]);
+  const { data: skills } = useFetchData("skills", "*");
+
+  useAnimate([".skills-title"]);
 
   return (
     <Container
@@ -12,15 +14,15 @@ const Skills = () => {
       bgColor="bg-primary-white"
       textColor="text-primary-black">
       <div className="flex flex-col gap-5 items-center">
-        <div className="skills-title-fade-in ">
+        <div className="skills-title ">
           <SectionTitle title="My Skills" />
         </div>
         <div
           className="flex flex-wrap justify-center lg:py-10
         gap-6 lg:gap-10 xl:gap-x-[70px]">
-          {SKILLS.map((skill, index) => (
+          {skills.map(skill => (
             <SkillItem
-              key={index}
+              key={skill.id}
               {...skill}
             />
           ))}

@@ -1,10 +1,12 @@
-import useAnimation from "/utils/hooks/useAnimations";
 import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { CertificationItem } from "./components";
-import { CERTIFICATIONS } from "/constants";
+import useFetchData from "../hooks/useFetchData";
+import useAnimate from "../hooks/useAnimate";
 
 const Certifications = () => {
-  useAnimation([".certs-title-fade-in"]);
+  const { data: certifications } = useFetchData("certifications", "*");
+
+  useAnimate([".certs-title"]);
 
   return (
     <Container
@@ -12,14 +14,14 @@ const Certifications = () => {
       bgColor="bg-primary-black"
       textColor="text-primary-white">
       <div className="flex flex-col gap-5 xl:px-6">
-        <div className="certs-title-fade-in">
+        <div className="certs-title">
           <SectionTitle title="My Certifications" />
         </div>
 
         <ItemsWrapper>
-          {CERTIFICATIONS.map((cert, index) => (
+          {certifications.map(cert => (
             <CertificationItem
-              key={index}
+              key={cert.id}
               {...cert}
             />
           ))}

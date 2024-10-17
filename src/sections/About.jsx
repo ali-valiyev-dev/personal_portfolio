@@ -1,16 +1,14 @@
-import useAnimation from "/utils/hooks/useAnimations";
 import { Container, SectionTitle } from "../common";
-import { GENERAL_INFO } from "/constants";
+import useFetchData from "../hooks/useFetchData";
+import useAnimate from "../hooks/useAnimate";
 import DOMPurify from "dompurify";
 
 const About = () => {
-  useAnimation([
-    ".about-img-fade-in",
-    ".about-title-fade-in",
-    ".about-subtitle-fade-in",
-  ]);
+  const { data: general_info } = useFetchData("general_info", "ABOUT_ME_TEXT");
 
-  const sanitizedContent = DOMPurify.sanitize(GENERAL_INFO.ABOUT_ME_TEXT);
+  useAnimate([".anim-about-content"]);
+
+  const sanitizedContent = DOMPurify.sanitize(general_info[0]?.ABOUT_ME_TEXT);
 
   return (
     <Container
@@ -18,7 +16,7 @@ const About = () => {
       bgColor="bg-primary-white"
       textColor="text-primary-black">
       <div className="flex flex-col lg:flex-row gap-5 items-start">
-        <figure className="about-img-fade-in w-full lg:w-1/2 flex items-center justify-center">
+        <figure className="anim-about-content w-full lg:w-1/2 flex items-center justify-center">
           <img
             src="/me.png"
             alt="Portrait of the developer"
@@ -27,12 +25,12 @@ const About = () => {
         </figure>
 
         <article className="w-full lg:w-1/2 flex flex-col gap-5">
-          <div className="about-title-fade-in w-full lg:w-max">
+          <div className="anim-about-content w-full lg:w-max">
             <SectionTitle title="About Me" />
           </div>
 
           <p
-            className="about-subtitle-fade-in text-zinc-500 text-lg"
+            className="anim-about-content text-zinc-500 text-lg"
             dangerouslySetInnerHTML={{ __html: sanitizedContent }}
           />
         </article>

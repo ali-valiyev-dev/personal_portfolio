@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import { NAV_LINKS, SOCIAL_LINKS } from "/constants";
+import { NAV_LINKS } from "../../configs/constants";
 import { Logo, ResumeLink, SocialLink } from "../../common";
 import { NavLinksWrapper, NavLink } from "../components";
+import useFetchData from "../../hooks/useFetchData";
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,8 @@ const MobileNavbar = () => {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
+
+  const { data: social_links } = useFetchData("social_links", "*");
 
   return (
     <div className="flex lg:hidden items-center">
@@ -61,10 +64,10 @@ const MobileNavbar = () => {
         </NavLinksWrapper>
 
         <div className="absolute bottom-0 left-0 flex flex-wrap justify-center w-full gap-2 sm:gap-6 py-4 px-4">
-          {SOCIAL_LINKS.map((link, index) => (
+          {social_links.map(social_link => (
             <SocialLink
-              key={index}
-              {...link}
+              key={social_link.id}
+              {...social_link}
             />
           ))}
 

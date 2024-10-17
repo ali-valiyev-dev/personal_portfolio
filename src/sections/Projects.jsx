@@ -1,10 +1,12 @@
-import useAnimation from "/utils/hooks/useAnimations";
 import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { ProjectItem } from "./components";
-import { PROJECTS } from "/constants";
+import useFetchData from "../hooks/useFetchData";
+import useAnimate from "../hooks/useAnimate";
 
 const Projects = () => {
-  useAnimation([".projects-title-fade-in"]);
+  const { data: projects } = useFetchData("projects", "*");
+
+  useAnimate([".projects-title"]);
 
   return (
     <Container
@@ -12,12 +14,12 @@ const Projects = () => {
       bgColor="bg-primary-black"
       textColor="text-primary-white">
       <div className="flex flex-col gap-5">
-        <div className="projects-title-fade-in">
+        <div className="projects-title">
           <SectionTitle title="My Projects" />
         </div>
 
         <ItemsWrapper>
-          {PROJECTS.map(project => (
+          {projects.map(project => (
             <ProjectItem
               key={project.id}
               {...project}

@@ -1,15 +1,33 @@
-import useAnimation from "/utils/hooks/useAnimations";
 import { SocialLink, HeroHeadline, ResumeLink, Container } from "../common";
-import { SOCIAL_LINKS, GENERAL_INFO } from "/constants";
+import useFetchData from "../hooks/useFetchData";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
-  useAnimation([
-    ".hero-fade-in",
-    ".hero-headline-fade-in",
-    ".hero-text-fade-in",
-    ".hero-socials-fade-in",
-    ".hero-img-fade-in",
-  ]);
+  const { data: social_links } = useFetchData("social_links", "*");
+  const { data: general_info } = useFetchData("general_info", "HERO_TEXT");
+
+  useGSAP(() => {
+    gsap.fromTo(
+      ".hero-content",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: ".hero-content",
+          start: "top 100%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      }
+    );
+  }, []);
 
   return (
     <Container
@@ -18,26 +36,26 @@ const Hero = () => {
       textColor="text-primary-black">
       <div className="flex flex-col-reverse gap-12 lg:gap-0 lg:flex-row">
         <div className="lg:w-1/2 flex flex-col justify-end gap-10">
-          <div className="hero-headline-fade-in">
+          <div className="hero-content">
             <HeroHeadline />
           </div>
 
-          <p className="hero-text-fade-in text-zinc-500">
-            {GENERAL_INFO.HERO_TEXT}
+          <p className="hero-content text-zinc-500">
+            {general_info[0]?.HERO_TEXT}
           </p>
 
-          <div className="hero-socials-fade-in flex flex-wrap gap-2 sm:gap-6">
-            {SOCIAL_LINKS.map((link, index) => (
+          <div className="hero-content flex flex-wrap gap-2 sm:gap-6">
+            {social_links.map(social_link => (
               <SocialLink
-                key={index}
-                {...link}
+                key={social_link.id}
+                {...social_link}
               />
             ))}
             <ResumeLink />
           </div>
         </div>
 
-        <div className="hero-img-fade-in lg:w-1/2 flex justify-center lg:mb-7">
+        <div className="hero-content lg:w-1/2 flex justify-center lg:mb-7">
           <img
             src="/hero.png"
             alt="Hero"

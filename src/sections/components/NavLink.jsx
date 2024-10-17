@@ -1,4 +1,4 @@
-import { handleSmoothScroll } from "/utils/helpers";
+import { handleSmoothScroll } from "../../utils/helpers";
 import PropTypes from "prop-types";
 
 const NavLink = ({ href, label, setIsOpen }) => {

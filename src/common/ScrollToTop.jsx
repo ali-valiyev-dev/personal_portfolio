@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import { scrollToTop } from "/utils/helpers";
+import { scrollToTop } from "../utils/helpers";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);

@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "@iconify-icons/mdi-light": "^1.2.5",
+    "@supabase/supabase-js": "^2.45.4",
     "dompurify": "^3.1.6",
     "gsap": "^3.12.5",
     "react": "^18.3.1",

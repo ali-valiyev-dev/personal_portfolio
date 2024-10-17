@@ -1,10 +1,12 @@
-import { EDUCATION } from "/constants";
 import { Container, ItemsWrapper, SectionTitle } from "../common";
 import { EducationItem } from "./components";
-import useAnimation from "/utils/hooks/useAnimations";
+import useFetchData from "../hooks/useFetchData";
+import useAnimate from "../hooks/useAnimate";
 
 const Education = () => {
-  useAnimation([".edu-title-fade-in"]);
+  const { data: education } = useFetchData("education", "*");
+
+  useAnimate([".edu-title"]);
 
   return (
     <Container
@@ -12,14 +14,14 @@ const Education = () => {
       bgColor="bg-primary-black"
       textColor="text-primary-white">
       <div className="flex flex-col items-center gap-5 xl:px-6">
-        <div className="edu-title-fade-in">
+        <div className="edu-title">
           <SectionTitle title="My Education" />
         </div>
 
         <ItemsWrapper>
-          {EDUCATION.map((edu, index) => (
+          {education.map(edu => (
             <EducationItem
-              key={index}
+              key={edu.id}
               {...edu}
             />
           ))}

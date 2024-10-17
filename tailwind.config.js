@@ -16,13 +16,8 @@ export default {
           500: "#71717a",
           800: "#27272a",
         },
-        error: {
-          500: "#ef4444",
-        },
       },
-      fontFamily: {
-        sora: ["Sora", "sans-serif"],
-      },
+
       textShadow: {
         outline:
           "1.5px 1.5px 0 #000, -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000",
