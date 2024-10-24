@@ -1,12 +1,26 @@
-import { Container, ItemsWrapper, SectionTitle } from "../common";
+import { Container, ItemsWrapper, SectionTitle, Spinner } from "../common";
 import { EducationItem } from "./components";
 import useFetchData from "../hooks/useFetchData";
+import useLoadingState from "../hooks/useLoadingState";
+import { useTranslation } from "react-i18next";
 import useAnimate from "../hooks/useAnimate";
 
 const Education = () => {
-  const { data: education } = useFetchData("education", "*");
+  const { t } = useTranslation();
 
-  useAnimate([".edu-title"]);
+  const educationData = useFetchData("education", "*");
+
+  const { loading, error } = useLoadingState(educationData);
+
+  useAnimate([".anim-edu-title"], loading);
+
+  if (error) {
+    return null;
+  }
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <Container
@@ -14,15 +28,16 @@ const Education = () => {
       bgColor="bg-primary-black"
       textColor="text-primary-white">
       <div className="flex flex-col items-center gap-5 xl:px-6">
-        <div className="edu-title">
-          <SectionTitle title="My Education" />
+        <div className="anim-edu-title">
+          <SectionTitle title={t("section_titles.my_education")} />
         </div>
 
         <ItemsWrapper>
-          {education.map(edu => (
+          {educationData.data.map(edu => (
             <EducationItem
-              key={edu.id}
+              key={edu._id}
               {...edu}
+              loading={loading}
             />
           ))}
         </ItemsWrapper>

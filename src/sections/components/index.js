@@ -6,6 +6,7 @@ import MobileNavbar from "./MobileNavbar";
 import NavLink from "./NavLink";
 import NavLinksWrapper from "./NavLinksWrapper";
 import EducationItem from "./EducationItem";
+import LanguageSelectButton from "./LanguageSelectButton";
 
 export {
   SkillItem,
@@ -16,4 +17,5 @@ export {
   NavLink,
   NavLinksWrapper,
   EducationItem,
+  LanguageSelectButton,
 };

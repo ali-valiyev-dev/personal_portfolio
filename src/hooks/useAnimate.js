@@ -1,11 +1,13 @@
-import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useAnimate = selectors => {
+const useAnimate = (selectors, loading) => {
   useEffect(() => {
+    if (loading || !selectors || selectors.length === 0) return;
+
     const mm = gsap.matchMedia();
 
     const animateElements = (selector, startPosition) => {
@@ -28,17 +30,21 @@ const useAnimate = selectors => {
     };
 
     mm.add("(min-width: 1280px)", () => {
-      selectors.forEach(selector => animateElements(selector, "top 85%"));
+      selectors.forEach(selector => {
+        animateElements(selector, "top 85%");
+      });
     });
 
     mm.add("(max-width: 1279px)", () => {
-      selectors.forEach(selector => animateElements(selector, "top 90%"));
+      selectors.forEach(selector => {
+        animateElements(selector, "top 95%");
+      });
     });
 
     return () => {
       mm.revert();
     };
-  }, [selectors]);
+  }, [selectors, loading]);
 };
 
 export default useAnimate;

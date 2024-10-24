@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import { Logo } from "../common";
 import { NAV_LINKS } from "../configs/constants";
-import { MobileNavbar, NavLink, NavLinksWrapper } from "./components";
+import {
+  LanguageSelectButton,
+  MobileNavbar,
+  NavLink,
+  NavLinksWrapper,
+} from "./components";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,10 +39,14 @@ const Navbar = () => {
             {NAV_LINKS.map((link, index) => (
               <NavLink
                 key={index}
-                {...link}
+                link={link}
               />
             ))}
           </NavLinksWrapper>
+        </div>
+
+        <div className="hidden lg:flex">
+          <LanguageSelectButton />
         </div>
 
         <MobileNavbar />

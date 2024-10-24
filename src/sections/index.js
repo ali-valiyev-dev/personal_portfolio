@@ -7,6 +7,7 @@ import Projects from "./Projects";
 import Contacts from "./Contacts";
 import Education from "./Education";
 import Certifications from "./Certifications";
+import NotFound from "./NotFound";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   Contacts,
   Education,
   Certifications,
+  NotFound,
 };

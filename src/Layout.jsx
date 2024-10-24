@@ -1,53 +1,45 @@
-import { lazy, Suspense } from "react";
-import { Spinner } from "./common";
+import { useParams } from "react-router-dom";
+import NotFound from "./sections/NotFound";
 
-const Navbar = lazy(() => import("./sections/Navbar"));
-const Hero = lazy(() => import("./sections/Hero"));
-const Skills = lazy(() => import("./sections/Skills"));
-const Projects = lazy(() => import("./sections/Projects"));
-const About = lazy(() => import("./sections/About"));
-const Experience = lazy(() => import("./sections/Experience"));
-const Education = lazy(() => import("./sections/Education"));
-const Certifications = lazy(() => import("./sections/Certifications"));
-const Contacts = lazy(() => import("./sections/Contacts"));
+import Navbar from "./sections/Navbar";
+import Hero from "./sections/Hero";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import About from "./sections/About";
+import Experience from "./sections/Experience";
+import Education from "./sections/Education";
+import Certifications from "./sections/Certifications";
+import Contacts from "./sections/Contacts";
+import { ScrollToTop } from "./common";
 
 function Layout() {
+  const { lang } = useParams();
+  const validLanguages = [undefined, "az", "en"];
+
+  if (!validLanguages.includes(lang)) {
+    return <NotFound />;
+  }
+
   return (
     <>
-      <Suspense fallback={<Spinner />}>
-        <header>
-          <Navbar />
-        </header>
-      </Suspense>
+      <header>
+        <Navbar />
+      </header>
 
       <main>
-        <Suspense fallback={<Spinner />}>
-          <Hero />
-        </Suspense>
-        <Suspense fallback={<Spinner />}>
-          <Skills />
-        </Suspense>
-        <Suspense fallback={<Spinner />}>
-          <Projects />
-        </Suspense>
-        <Suspense fallback={<Spinner />}>
-          <About />
-        </Suspense>
-        <Suspense fallback={<Spinner />}>
-          <Experience />
-        </Suspense>
-        <Suspense fallback={<Spinner />}>
-          <Education />
-        </Suspense>
-        <Suspense fallback={<Spinner />}>
-          <Certifications />
-        </Suspense>
+        <Hero />
+        <Skills />
+        <Projects />
+        <About />
+        <Experience />
+        <Education />
+        <Certifications />
+
+        <ScrollToTop />
       </main>
 
       <footer>
-        <Suspense fallback={<Spinner />}>
-          <Contacts />
-        </Suspense>
+        <Contacts />
       </footer>
     </>
   );

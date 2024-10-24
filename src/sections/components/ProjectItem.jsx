@@ -5,23 +5,24 @@ import useAnimate from "../../hooks/useAnimate";
 import useFetchMedia from "../../hooks/useFetchMedia";
 
 const ProjectItem = ({
-  id,
+  index,
   image,
   title,
   description,
   repoLink,
   previewLink,
   tech,
+  loading,
 }) => {
   const { imageSrc } = useFetchMedia("portfolio-images", image);
 
-  useAnimate([".project-item-content"]);
+  useAnimate([".anim-project-item"], loading);
 
-  const reverse = id % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse";
+  const reverse = index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse";
 
   return (
     <div
-      className={`project-item-content w-full flex flex-col ${reverse} gap-7 xl:gap-10`}>
+      className={`anim-project-item w-full flex flex-col ${reverse} gap-7 xl:gap-10`}>
       <figure className="border border-zinc-800 overflow-hidden rounded-xl w-full lg:w-1/2 flex items-center justify-center transition-colors duration-300 hover:border-zinc-700">
         <a
           target="_blank"
@@ -29,7 +30,8 @@ const ProjectItem = ({
           {imageSrc ? (
             <img
               src={imageSrc}
-              alt={`Project ${id} - ${title}`}
+              loading="lazy"
+              alt={`Project ${index} - ${title}`}
               className="object-cover"
             />
           ) : (
@@ -39,9 +41,9 @@ const ProjectItem = ({
       </figure>
 
       <div className="w-full lg:w-1/2 flex flex-col gap-5 relative">
-        <div className="project-item-content flex items-center justify-between">
+        <div className="anim-project-item flex items-center justify-between">
           <span className="font-bold text-2xl xl:text-5xl">
-            {id.toString().padStart(2, "0")}
+            {index.toString().padStart(2, "0")}
           </span>
 
           <div className="flex gap-4">
@@ -72,17 +74,17 @@ const ProjectItem = ({
           </div>
         </div>
 
-        <h3 className="project-item-content font-semibold text-xl xl:text-3xl">
+        <h3 className="anim-project-item font-semibold text-xl xl:text-3xl">
           {title}
         </h3>
 
-        <p className="project-item-content text-zinc-500">{description}</p>
+        <p className="anim-project-item text-zinc-500">{description}</p>
 
         <div className="flex gap-1 items-center flex-wrap xl:absolute xl:bottom-0">
           {tech.map((tech, index) => (
             <div
               key={index}
-              className="project-item-content">
+              className="anim-project-item">
               <TechItem {...tech} />
             </div>
           ))}
@@ -93,7 +95,7 @@ const ProjectItem = ({
 };
 
 ProjectItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -105,6 +107,7 @@ ProjectItem.propTypes = {
       name: PropTypes.string.isRequired,
     })
   ).isRequired,
+  loading: PropTypes.bool,
 };
 
 export default ProjectItem;

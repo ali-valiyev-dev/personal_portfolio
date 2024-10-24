@@ -10,19 +10,21 @@ const ExperienceItem = ({
   workPeriod,
   description,
   techStack,
+  loading,
 }) => {
   const { imageSrc } = useFetchMedia("portfolio-images", companyLogo);
 
-  useAnimate([".exp-item-content"]);
+  useAnimate([".anim-exp-item"], loading);
 
   return (
-    <div className="exp-item-content text-zinc-300 rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
-      <div className="exp-item-content relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
+    <div className="anim-exp-item text-zinc-300 rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
+      <div className="anim-exp-item relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
             {imageSrc ? (
               <img
                 src={imageSrc}
+                loading="lazy"
                 alt={`${companyName} logo`}
                 height={50}
                 width={100}
@@ -37,14 +39,14 @@ const ExperienceItem = ({
         <span className="hidden md:flex text-nowrap">{workPeriod}</span>
       </div>
 
-      <p className="exp-item-content pt-7 text-zinc-400">{description}</p>
+      <p className="anim-exp-item pt-7 text-zinc-400">{description}</p>
 
       {techStack && (
         <div className="flex gap-2 flex-wrap pt-7">
           {techStack?.map((tech, index) => (
             <div
               key={index}
-              className="exp-item-content">
+              className="anim-exp-item">
               <TechItem {...tech} />
             </div>
           ))}
@@ -66,6 +68,7 @@ ExperienceItem.propTypes = {
       name: PropTypes.string.isRequired,
     })
   ),
+  loading: PropTypes.bool,
 };
 
 export default ExperienceItem;

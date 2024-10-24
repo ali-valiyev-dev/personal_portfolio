@@ -1,12 +1,25 @@
-import { Container, ItemsWrapper, SectionTitle } from "../common";
+import { Container, ItemsWrapper, SectionTitle, Spinner } from "../common";
 import { CertificationItem } from "./components";
 import useFetchData from "../hooks/useFetchData";
+import { useTranslation } from "react-i18next";
+import useLoadingState from "../hooks/useLoadingState";
 import useAnimate from "../hooks/useAnimate";
-
 const Certifications = () => {
-  const { data: certifications } = useFetchData("certifications", "*");
+  const { t } = useTranslation();
 
-  useAnimate([".certs-title"]);
+  const certificationsData = useFetchData("certifications", "*");
+
+  const { loading, error } = useLoadingState(certificationsData);
+
+  useAnimate([".anim-certs-title"], loading);
+
+  if (error) {
+    return null;
+  }
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <Container
@@ -14,15 +27,16 @@ const Certifications = () => {
       bgColor="bg-primary-black"
       textColor="text-primary-white">
       <div className="flex flex-col gap-5 xl:px-6">
-        <div className="certs-title">
-          <SectionTitle title="My Certifications" />
+        <div className="anim-certs-title">
+          <SectionTitle title={t("section_titles.my_certifications")} />
         </div>
 
         <ItemsWrapper>
-          {certifications.map(cert => (
+          {certificationsData.data.map(cert => (
             <CertificationItem
-              key={cert.id}
+              key={cert._id}
               {...cert}
+              loading={loading}
             />
           ))}
         </ItemsWrapper>

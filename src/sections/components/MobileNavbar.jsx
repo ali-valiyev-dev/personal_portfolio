@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { NAV_LINKS } from "../../configs/constants";
 import { Logo, ResumeLink, SocialLink } from "../../common";
-import { NavLinksWrapper, NavLink } from "../components";
+import { NavLinksWrapper, NavLink, LanguageSelectButton } from "../components";
 import useFetchData from "../../hooks/useFetchData";
 
 const MobileNavbar = () => {
@@ -18,7 +18,7 @@ const MobileNavbar = () => {
     };
   }, [isOpen]);
 
-  const { data: social_links } = useFetchData("social_links", "*");
+  const { data: social_links } = useFetchData("social_links", "*", false);
 
   return (
     <div className="flex lg:hidden items-center">
@@ -35,7 +35,7 @@ const MobileNavbar = () => {
       </button>
 
       <div
-        className={`bg-primary-white fixed left-0 top-0 h-screen w-full flex flex-col items-center justify-center transition-all duration-500  overflow-hidden ease-in-out z-50 ${
+        className={`bg-primary-white fixed left-0 top-0 h-screen w-full flex flex-col items-center justify-center gap-12 transition-all duration-500  overflow-hidden ease-in-out z-50 ${
           isOpen ? "max-h-full border-b border-primary-black" : "max-h-0"
         }`}>
         <div className="flex items-center justify-between py-2 lg:py-4 px-4 md:px-10 absolute top-0 left-0 w-full ">
@@ -58,15 +58,19 @@ const MobileNavbar = () => {
             <NavLink
               key={index}
               setIsOpen={setIsOpen}
-              {...link}
+              link={link}
             />
           ))}
         </NavLinksWrapper>
 
+        <div className="w-32">
+          <LanguageSelectButton />
+        </div>
+
         <div className="absolute bottom-0 left-0 flex flex-wrap justify-center w-full gap-2 sm:gap-6 py-4 px-4">
           {social_links.map(social_link => (
             <SocialLink
-              key={social_link.id}
+              key={social_link._id}
               {...social_link}
             />
           ))}

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
-import useAnimate from "../../hooks/useAnimate";
 import useFetchMedia from "../../hooks/useFetchMedia";
+import { useTranslation } from "react-i18next";
+import useAnimate from "../../hooks/useAnimate";
 
 const EducationItem = ({
   universityLogo,
@@ -9,25 +10,25 @@ const EducationItem = ({
   major,
   description,
   relevantCoursework,
+  loading,
 }) => {
-  const { imageSrc } = useFetchMedia("portfolio-images", universityLogo);
+  const { t } = useTranslation();
 
-  useAnimate([".edu-item"]);
+  const universityLogoData = useFetchMedia("portfolio-images", universityLogo);
+
+  useAnimate([".anim-edu-item"], loading);
 
   return (
-    <div className="edu-item rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
-      <div className="edu-item relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
+    <div className="anim-edu-item rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
+      <div className="anim-edu-item relative flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
-            {imageSrc ? (
-              <img
-                src={imageSrc}
-                alt={`${university} logo`}
-                className="w-auto h-10"
-              />
-            ) : (
-              <p>Image unavailable</p>
-            )}
+            <img
+              src={universityLogoData.imageSrc}
+              loading="lazy"
+              alt={`${university} logo`}
+              className="w-auto h-10"
+            />
             <span className="flex text-nowrap md:hidden text-zinc-300">
               {studyYears}
             </span>
@@ -39,10 +40,10 @@ const EducationItem = ({
         </span>
       </div>
 
-      <p className="edu-item mt-7 text-zinc-400">{description}</p>
-      <p className="edu-item mt-7 text-zinc-400">
+      <p className="anim-edu-item mt-7 text-zinc-400">{description}</p>
+      <p className="anim-edu-item mt-7 text-zinc-400">
         <span className="font-semibold text-zinc-300">
-          Relevant Coursework:
+          {t("common.relevant_coursework")}
         </span>{" "}
         {relevantCoursework}
       </p>
@@ -57,6 +58,7 @@ EducationItem.propTypes = {
   major: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   relevantCoursework: PropTypes.string.isRequired,
+  loading: PropTypes.bool,
 };
 
 export default EducationItem;

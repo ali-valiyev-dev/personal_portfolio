@@ -1,12 +1,25 @@
-import { Container, SectionTitle, SeeMore } from "../common";
+import { Container, SectionTitle, Spinner } from "../common";
 import { ExperienceItem } from "./components";
 import useFetchData from "../hooks/useFetchData";
+import useLoadingState from "../hooks/useLoadingState";
+import { useTranslation } from "react-i18next";
 import useAnimate from "../hooks/useAnimate";
 
 const Experience = () => {
-  const { data: experience } = useFetchData("experience", "*");
+  const { t } = useTranslation();
+  const experienceData = useFetchData("experience", "*");
 
-  useAnimate([".exp-title"]);
+  const { loading, error } = useLoadingState(experienceData);
+
+  useAnimate([".anim-exp-title"], loading);
+
+  if (error) {
+    return null;
+  }
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <Container
@@ -14,18 +27,17 @@ const Experience = () => {
       bgColor="bg-primary-black"
       textColor="text-primary-white">
       <div className="flex flex-col gap-5 xl:px-6">
-        <div className="exp-title">
-          <SectionTitle title="My Experience" />
+        <div className="anim-exp-title">
+          <SectionTitle title={t("section_titles.my_experience")} />
         </div>
 
-        <SeeMore>
-          {experience.map(experience => (
-            <ExperienceItem
-              key={experience.id}
-              {...experience}
-            />
-          ))}
-        </SeeMore>
+        {experienceData.data.map(exp => (
+          <ExperienceItem
+            key={exp._id}
+            {...exp}
+            loading={loading}
+          />
+        ))}
       </div>
     </Container>
   );

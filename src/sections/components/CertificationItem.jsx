@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
 import useAnimate from "../../hooks/useAnimate";
+import { useTranslation } from "react-i18next";
 
 const CertificationItem = ({
   icon,
@@ -9,12 +10,15 @@ const CertificationItem = ({
   link,
   description,
   details,
+  loading,
 }) => {
-  useAnimate([".cert-item-content"]);
+  const { t } = useTranslation();
+
+  useAnimate([".anim-cert-item"], loading);
 
   return (
-    <div className="cert-item-content text-primary-white w-full rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
-      <div className="cert-item-content flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
+    <div className="anim-cert-item text-primary-white w-full rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
+      <div className="anim-cert-item flex flex-col lg:flex-row gap-7 lg:justify-between lg:items-center">
         <div className="flex flex-col md:flex-row gap-7 h-max md:items-center">
           <div className="flex items-center justify-between">
             <Icon
@@ -29,9 +33,9 @@ const CertificationItem = ({
         <span className="hidden md:flex text-nowrap">{date}</span>
       </div>
 
-      <p className="cert-item-content mt-7 text-zinc-400">{description}</p>
+      <p className="anim-cert-item mt-7 text-zinc-400">{description}</p>
 
-      <div className="cert-item-content flex items-center justify-between mt-7">
+      <div className="anim-cert-item flex items-center justify-between mt-7">
         <div className="flex items-center gap-2 sm:gap-5 text-zinc-400">
           {details &&
             details?.map(({ icon, text }, index) => (
@@ -54,7 +58,7 @@ const CertificationItem = ({
           rel="noopener noreferrer"
           className="flex justify-center items-center gap-1 text-base text-nowrap hover:underline text-zinc-300 hover:text-zinc-400 transition-all duration-300"
           aria-label={`View ${title} certification details (opens in a new tab)`}>
-          More{" "}
+          {t("common.more")}{" "}
           <Icon
             icon="quill:link-out"
             width={16}
@@ -78,6 +82,7 @@ CertificationItem.propTypes = {
       text: PropTypes.string.isRequired,
     })
   ),
+  loading: PropTypes.bool,
 };
 
 export default CertificationItem;
