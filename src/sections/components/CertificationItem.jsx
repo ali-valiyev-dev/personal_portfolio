@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
 import useAnimate from "../../hooks/useAnimate";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 const CertificationItem = ({
   icon,
@@ -13,7 +14,13 @@ const CertificationItem = ({
 }) => {
   const { t } = useTranslation();
 
-  useAnimate([".anim-cert-item"], false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  useAnimate([".anim-cert-item"], loading);
 
   return (
     <div className="anim-cert-item text-primary-white w-full rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">

@@ -1,11 +1,7 @@
 import { useMemo } from "react";
-import useFetchData from "../hooks/useFetchData";
+import PropTypes from "prop-types";
 
-const HeroHeading = () => {
-  const { data: general_info } = useFetchData("general_info", "HERO_HEADLINE");
-
-  const headline = general_info?.length ? general_info[0].HERO_HEADLINE : "";
-
+const HeroHeading = ({ headline }) => {
   const textShadowOutline = "text-primary-white text-shadow-outline";
   const dropShadow = "drop-shadow-heading";
   const dropShadowMediumFont = "font-medium drop-shadow-heading";
@@ -42,4 +38,7 @@ const HeroHeading = () => {
   );
 };
 
+HeroHeading.propTypes = {
+  headline: PropTypes.string,
+};
 export default HeroHeading;

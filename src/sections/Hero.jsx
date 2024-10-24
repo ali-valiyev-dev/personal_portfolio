@@ -6,17 +6,13 @@ import {
   Spinner,
 } from "../common";
 import useFetchData from "../hooks/useFetchData";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import useFetchMedia from "../hooks/useFetchMedia";
 import useLoadingState from "../hooks/useLoadingState";
 import useAnimate from "../hooks/useAnimate";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const Hero = () => {
   const socialLinks = useFetchData("social_links", "*", false);
-  const generalInfo = useFetchData("general_info", "HERO_TEXT");
+  const generalInfo = useFetchData("general_info", "HERO_HEADLINE, HERO_TEXT");
   const heroImage = useFetchMedia("portfolio-images", "hero.png");
 
   const { loading, error } = useLoadingState(
@@ -43,7 +39,7 @@ const Hero = () => {
       <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-0 ">
         <div className="lg:w-1/2 flex flex-col justify-end gap-5">
           <div className="anim-hero-content">
-            <HeroHeadline />
+            <HeroHeadline headline={generalInfo.data[0]?.HERO_HEADLINE} />
           </div>
 
           <p className="anim-hero-content text-zinc-500">

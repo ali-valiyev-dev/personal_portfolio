@@ -29,13 +29,13 @@ const useAnimate = (selectors, loading) => {
       );
     };
 
-    mm.add("(min-width: 1280px)", () => {
+    mm.add("(min-width: 1024px)", () => {
       selectors.forEach(selector => {
         animateElements(selector, "top 85%");
       });
     });
 
-    mm.add("(max-width: 1279px)", () => {
+    mm.add("(max-width: 1023px)", () => {
       selectors.forEach(selector => {
         animateElements(selector, "top 95%");
       });

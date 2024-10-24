@@ -2,9 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import NotFound from "./sections/NotFound";
 import { Spinner } from "./common";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Routes>
