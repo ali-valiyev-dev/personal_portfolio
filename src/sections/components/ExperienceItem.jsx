@@ -11,10 +11,7 @@ const ExperienceItem = ({
   description,
   techStack,
 }) => {
-  const { data: imageSrc, loading } = useFetchMedia(
-    "portfolio-images",
-    companyLogo
-  );
+  const { imageSrc, loading } = useFetchMedia("portfolio-images", companyLogo);
 
   useAnimate([".anim-exp-item"], loading);
 

@@ -13,7 +13,10 @@ const EducationItem = ({
 }) => {
   const { t } = useTranslation();
 
-  const { data, loading } = useFetchMedia("portfolio-images", universityLogo);
+  const { imageSrc, loading } = useFetchMedia(
+    "portfolio-images",
+    universityLogo
+  );
 
   useAnimate([".anim-edu-item"], loading);
 
@@ -23,7 +26,7 @@ const EducationItem = ({
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
             <img
-              src={data?.imageSrc}
+              src={imageSrc}
               loading="lazy"
               alt={`${university} logo`}
               className="w-auto h-10"
