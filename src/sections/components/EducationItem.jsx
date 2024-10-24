@@ -10,11 +10,10 @@ const EducationItem = ({
   major,
   description,
   relevantCoursework,
-  loading,
 }) => {
   const { t } = useTranslation();
 
-  const universityLogoData = useFetchMedia("portfolio-images", universityLogo);
+  const { data, loading } = useFetchMedia("portfolio-images", universityLogo);
 
   useAnimate([".anim-edu-item"], loading);
 
@@ -24,7 +23,7 @@ const EducationItem = ({
         <div className="flex flex-col md:flex-row flex-nowrap gap-7 h-max md:items-center">
           <div className="flex justify-between items-center">
             <img
-              src={universityLogoData.imageSrc}
+              src={data?.imageSrc}
               loading="lazy"
               alt={`${university} logo`}
               className="w-auto h-10"
@@ -58,7 +57,6 @@ EducationItem.propTypes = {
   major: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   relevantCoursework: PropTypes.string.isRequired,
-  loading: PropTypes.bool,
 };
 
 export default EducationItem;

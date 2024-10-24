@@ -12,9 +12,8 @@ const ProjectItem = ({
   repoLink,
   previewLink,
   tech,
-  loading,
 }) => {
-  const { imageSrc } = useFetchMedia("portfolio-images", image);
+  const { imageSrc, loading } = useFetchMedia("portfolio-images", image);
 
   useAnimate([".anim-project-item"], loading);
 
@@ -107,7 +106,6 @@ ProjectItem.propTypes = {
       name: PropTypes.string.isRequired,
     })
   ).isRequired,
-  loading: PropTypes.bool,
 };
 
 export default ProjectItem;

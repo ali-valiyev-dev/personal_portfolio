@@ -10,11 +10,10 @@ const CertificationItem = ({
   link,
   description,
   details,
-  loading,
 }) => {
   const { t } = useTranslation();
 
-  useAnimate([".anim-cert-item"], loading);
+  useAnimate([".anim-cert-item"], false);
 
   return (
     <div className="anim-cert-item text-primary-white w-full rounded-xl border border-zinc-800 px-4 sm:px-6 py-7">
@@ -82,7 +81,6 @@ CertificationItem.propTypes = {
       text: PropTypes.string.isRequired,
     })
   ),
-  loading: PropTypes.bool,
 };
 
 export default CertificationItem;

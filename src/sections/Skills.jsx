@@ -1,16 +1,13 @@
 import { SkillItem } from "./components";
 import { Container, SectionTitle, Spinner } from "../common";
 import useFetchData from "../hooks/useFetchData";
-import useLoadingState from "../hooks/useLoadingState";
 import { useTranslation } from "react-i18next";
 import useAnimate from "../hooks/useAnimate";
 
 const Skills = () => {
   const { t } = useTranslation();
 
-  const skillsData = useFetchData("skills", "*", false);
-
-  const { loading, error } = useLoadingState(skillsData);
+  const { data, loading, error } = useFetchData("skills", "*", false);
 
   useAnimate([".anim-skills-title"], loading);
 
@@ -34,11 +31,10 @@ const Skills = () => {
         <div
           className="flex flex-wrap justify-center lg:py-10
         gap-6 lg:gap-10 xl:gap-x-[70px]">
-          {skillsData.data.map(skill => (
+          {data.map(skill => (
             <SkillItem
               key={skill._id}
               {...skill}
-              loading={loading}
             />
           ))}
         </div>

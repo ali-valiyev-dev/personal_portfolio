@@ -2,14 +2,11 @@ import { Container, ItemsWrapper, SectionTitle, Spinner } from "../common";
 import { CertificationItem } from "./components";
 import useFetchData from "../hooks/useFetchData";
 import { useTranslation } from "react-i18next";
-import useLoadingState from "../hooks/useLoadingState";
 import useAnimate from "../hooks/useAnimate";
 const Certifications = () => {
   const { t } = useTranslation();
 
-  const certificationsData = useFetchData("certifications", "*");
-
-  const { loading, error } = useLoadingState(certificationsData);
+  const { data, loading, error } = useFetchData("certifications", "*");
 
   useAnimate([".anim-certs-title"], loading);
 
@@ -32,11 +29,10 @@ const Certifications = () => {
         </div>
 
         <ItemsWrapper>
-          {certificationsData.data.map(cert => (
+          {data.map(cert => (
             <CertificationItem
               key={cert._id}
               {...cert}
-              loading={loading}
             />
           ))}
         </ItemsWrapper>

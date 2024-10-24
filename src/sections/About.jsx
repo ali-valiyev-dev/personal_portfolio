@@ -38,7 +38,6 @@ const About = () => {
           {aboutImage.imageSrc ? (
             <img
               src={aboutImage.imageSrc}
-              loading="lazy"
               alt="Portrait of the developer"
               className="max-w-full h-auto"
             />

@@ -1,16 +1,13 @@
 import { Container, ItemsWrapper, SectionTitle, Spinner } from "../common";
 import { ProjectItem } from "./components";
 import useFetchData from "../hooks/useFetchData";
-import useLoadingState from "../hooks/useLoadingState";
 import { useTranslation } from "react-i18next";
 import useAnimate from "../hooks/useAnimate";
 
 const Projects = () => {
   const { t } = useTranslation();
 
-  const projectsData = useFetchData("projects", "*");
-
-  const { loading, error } = useLoadingState(projectsData);
+  const { data, loading, error } = useFetchData("projects", "*");
 
   useAnimate([".anim-projects-title"], loading);
 
@@ -33,12 +30,11 @@ const Projects = () => {
         </div>
 
         <ItemsWrapper>
-          {projectsData.data.map((project, index) => (
+          {data.map((project, index) => (
             <ProjectItem
               key={project._id}
               {...project}
               index={index + 1}
-              loading={loading}
             />
           ))}
         </ItemsWrapper>

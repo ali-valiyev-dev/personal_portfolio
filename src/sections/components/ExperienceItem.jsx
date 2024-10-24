@@ -10,9 +10,11 @@ const ExperienceItem = ({
   workPeriod,
   description,
   techStack,
-  loading,
 }) => {
-  const { imageSrc } = useFetchMedia("portfolio-images", companyLogo);
+  const { data: imageSrc, loading } = useFetchMedia(
+    "portfolio-images",
+    companyLogo
+  );
 
   useAnimate([".anim-exp-item"], loading);
 
@@ -68,7 +70,6 @@ ExperienceItem.propTypes = {
       name: PropTypes.string.isRequired,
     })
   ),
-  loading: PropTypes.bool,
 };
 
 export default ExperienceItem;

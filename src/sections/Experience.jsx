@@ -1,15 +1,12 @@
 import { Container, SectionTitle, Spinner } from "../common";
 import { ExperienceItem } from "./components";
 import useFetchData from "../hooks/useFetchData";
-import useLoadingState from "../hooks/useLoadingState";
 import { useTranslation } from "react-i18next";
 import useAnimate from "../hooks/useAnimate";
 
 const Experience = () => {
   const { t } = useTranslation();
-  const experienceData = useFetchData("experience", "*");
-
-  const { loading, error } = useLoadingState(experienceData);
+  const { data, loading, error } = useFetchData("experience", "*");
 
   useAnimate([".anim-exp-title"], loading);
 
@@ -31,11 +28,10 @@ const Experience = () => {
           <SectionTitle title={t("section_titles.my_experience")} />
         </div>
 
-        {experienceData.data.map(exp => (
+        {data?.map(exp => (
           <ExperienceItem
             key={exp._id}
             {...exp}
-            loading={loading}
           />
         ))}
       </div>
