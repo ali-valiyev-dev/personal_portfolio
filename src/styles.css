@@ -4,6 +4,11 @@ footer {
   font-family: "Sora", sans-serif;
 }
 
+.spinner-container {
+  background-color: inherit;
+  height: 100vh;
+}
+
 .no-js-loading {
   position: fixed;
   top: 0;
