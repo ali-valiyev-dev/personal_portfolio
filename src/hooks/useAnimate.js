@@ -37,7 +37,7 @@ const useAnimate = (selectors, loading) => {
 
     mm.add("(max-width: 1023px)", () => {
       selectors.forEach(selector => {
-        animateElements(selector, "top center");
+        animateElements(selector, "top 60%");
       });
     });
 
