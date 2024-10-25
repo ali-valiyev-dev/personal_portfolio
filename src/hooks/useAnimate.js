@@ -31,13 +31,13 @@ const useAnimate = (selectors, loading) => {
 
     mm.add("(min-width: 1024px)", () => {
       selectors.forEach(selector => {
-        animateElements(selector, "top 85%");
+        animateElements(selector, "top 75%");
       });
     });
 
     mm.add("(max-width: 1023px)", () => {
       selectors.forEach(selector => {
-        animateElements(selector, "top 95%");
+        animateElements(selector, "top center");
       });
     });
 
