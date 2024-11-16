@@ -29,16 +29,16 @@ const useAnimate = (selectors, loading) => {
       );
     };
 
-    mm.add("(min-width: 1024px)", () => {
-      selectors.forEach(selector => {
-        animateElements(selector, "top 75%");
-      });
+    mm.add("(min-width: 1280px)", () => {
+      selectors.forEach(selector => animateElements(selector, "top 75%"));
     });
 
-    mm.add("(max-width: 1023px)", () => {
-      selectors.forEach(selector => {
-        animateElements(selector, "top 60%");
-      });
+    mm.add("(min-width: 767px) and (max-width: 1279px)", () => {
+      selectors.forEach(selector => animateElements(selector, "top 80%"));
+    });
+
+    mm.add("(max-width: 766px)", () => {
+      selectors.forEach(selector => animateElements(selector, "top 85%"));
     });
 
     return () => {
