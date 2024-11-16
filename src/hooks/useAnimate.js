@@ -29,15 +29,19 @@ const useAnimate = (selectors, loading) => {
       );
     };
 
-    mm.add("(min-width: 1280px)", () => {
+    mm.add("(min-width: 1440px)", () => {
+      selectors.forEach(selector => animateElements(selector, "top 70%"));
+    });
+
+    mm.add("(min-width: 1024px) and (max-width: 1439px)", () => {
       selectors.forEach(selector => animateElements(selector, "top 75%"));
     });
 
-    mm.add("(min-width: 767px) and (max-width: 1279px)", () => {
+    mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
       selectors.forEach(selector => animateElements(selector, "top 80%"));
     });
 
-    mm.add("(max-width: 766px)", () => {
+    mm.add("(max-width: 767px)", () => {
       selectors.forEach(selector => animateElements(selector, "top 85%"));
     });
 
